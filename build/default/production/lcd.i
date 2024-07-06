@@ -5452,29 +5452,29 @@ void SPI_Write(uint8_t data);
 void LCD_Command(uint8_t cmd) {
 
     MCP23S09_Write(0x09, ((cmd & 0xF0) | 0x04));
-    _delay((unsigned long)((1)*(4000000/4000000.0)));
+    _delay((unsigned long)((1)*(16000000/4000000.0)));
     MCP23S09_Write(0x09, (cmd & 0xF0));
-    _delay((unsigned long)((2)*(4000000/4000.0)));
+    _delay((unsigned long)((2)*(16000000/4000.0)));
 
 
     MCP23S09_Write(0x09, (((cmd << 4) & 0xF0) | 0x04));
-    _delay((unsigned long)((1)*(4000000/4000000.0)));
+    _delay((unsigned long)((1)*(16000000/4000000.0)));
     MCP23S09_Write(0x09, ((cmd << 4) & 0xF0));
-    _delay((unsigned long)((2)*(4000000/4000.0)));
+    _delay((unsigned long)((2)*(16000000/4000.0)));
 }
 
 void LCD_WriteChar(uint8_t data) {
 
     MCP23S09_Write(0x09,( (data & 0xF0) | 0x05));
-    _delay((unsigned long)((1)*(4000000/4000000.0)));
+    _delay((unsigned long)((1)*(16000000/4000000.0)));
     MCP23S09_Write(0x09, ((data & 0xF0) |0x01));
-    _delay((unsigned long)((200)*(4000000/4000000.0)));
+    _delay((unsigned long)((200)*(16000000/4000000.0)));
 
 
     MCP23S09_Write(0x09, (((data << 4) & 0xF0) | 0x05));
-    _delay((unsigned long)((1)*(4000000/4000000.0)));
+    _delay((unsigned long)((1)*(16000000/4000000.0)));
     MCP23S09_Write(0x09, (((data << 4) & 0xF0) |0x01));
-    _delay((unsigned long)((2)*(4000000/4000.0)));
+    _delay((unsigned long)((2)*(16000000/4000.0)));
 }
 
 void LCD_WriteString(const char *str) {
@@ -5485,18 +5485,18 @@ void LCD_WriteString(const char *str) {
 
 void LCD_Init(void) {
     MCP23S09_Init();
-    _delay((unsigned long)((20)*(4000000/4000.0)));
+    _delay((unsigned long)((20)*(16000000/4000.0)));
 
     LCD_Command(0x33);
-    _delay((unsigned long)((5)*(4000000/4000.0)));
+    _delay((unsigned long)((5)*(16000000/4000.0)));
     LCD_Command(0x32);
-    _delay((unsigned long)((5)*(4000000/4000.0)));
+    _delay((unsigned long)((5)*(16000000/4000.0)));
     LCD_Command(0x28);
-    _delay((unsigned long)((5)*(4000000/4000.0)));
+    _delay((unsigned long)((5)*(16000000/4000.0)));
     LCD_Command(0x0C);
-    _delay((unsigned long)((5)*(4000000/4000.0)));
+    _delay((unsigned long)((5)*(16000000/4000.0)));
     LCD_Command(0x06);
-    _delay((unsigned long)((5)*(4000000/4000.0)));
+    _delay((unsigned long)((5)*(16000000/4000.0)));
     LCD_Command(0x01);
-    _delay((unsigned long)((5)*(4000000/4000.0)));
+    _delay((unsigned long)((5)*(16000000/4000.0)));
 }

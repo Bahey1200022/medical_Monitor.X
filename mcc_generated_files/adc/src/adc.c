@@ -50,13 +50,11 @@
   Section: ADC Module APIs
 */
 
-void ADC_Initialize(void)
-{
+void ADC_Initialize(void) {
     // ADPREF VDD; ADNREF VSS; 
     ADCON1 = 0x0;
 
-    // ADCS FOSC/2; ACQT 0; ADFM left; 
-    ADCON2 = 0x0;
+    ADCON2 = 0x00; // Fosc/8, 2 TAD, right justify result
 
     // ADRESL 0x0; 
     ADRESL = 0x0;
@@ -64,40 +62,34 @@ void ADC_Initialize(void)
     // ADRESH 0x0; 
     ADRESH = 0x0;
 
-
     // ADON enabled; GO_nDONE undefined; CHS AN0; 
     ADCON0 = 0x3;
 
     //Clear the ADC interrupt flag
     PIR1bits.ADIF = 0;
-    
 }
-void ADC_SelectChannel(adc_channel_t channel)
-{
+
+void ADC_SelectChannel(adc_channel_t channel) {
     //Selects the A/D channel
     ADCON0bits.CHS = channel;    
 }
 
-void ADC_StartConversion(void)
-{
+void ADC_StartConversion(void) {
     //Starts the conversion
     ADCON0bits.GO_nDONE = 1;
 }
 
-bool ADC_IsConversionDone(void)
-{
+bool ADC_IsConversionDone(void) {
     //Returns the conversion status
     return ((bool)(!ADCON0bits.GO_nDONE));
 }
 
-adc_result_t ADC_GetConversionResult(void)
-{
+adc_result_t ADC_GetConversionResult(void) {
     //Conversion finished, returns the result
     return ((adc_result_t)((ADRESH << 8) + ADRESL));
 }
 
-adc_result_t ADC_GetConversion(adc_channel_t channel)
-{
+adc_result_t ADC_GetConversion(adc_channel_t channel) {
     //Selects the A/D channel
     ADCON0bits.CHS = channel;
     //Turns on the ADC module
@@ -110,16 +102,12 @@ adc_result_t ADC_GetConversion(adc_channel_t channel)
     ADCON0bits.GO_nDONE = 1;
 
     //Waits for the conversion to finish
-    while (ADCON0bits.GO_nDONE)
-    {
-    }
+    while (ADCON0bits.GO_nDONE) {}
 
     //Conversion finished, returns the result
     return ((adc_result_t)((ADRESH << 8) + ADRESL));
 }
 
-void ADC_TemperatureAcquisitionDelay(void)
-{
+void ADC_TemperatureAcquisitionDelay(void) {
     __delay_us(200);
 }
-

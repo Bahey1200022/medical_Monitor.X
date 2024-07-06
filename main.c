@@ -34,6 +34,10 @@
 #include "spi.h"
 #include "lcd.h"
 #include "mcp23s09.h"
+
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
 /*
     Main application
 */
@@ -59,14 +63,32 @@ int main(void)
     // Disable the Peripheral Interrupts 
     //INTERRUPT_PeripheralInterruptDisable(); 
     
-    SPI_Init();
    LCD_Init();
 
-LCD_WriteString("zebi manga");
+LCD_WriteString("Monitor Start");
+__delay_ms(400);
+   LCD_Command(0x01);  // Clear display screen
+
+ char str[6]; // Adjust the size if needed
 
     while(1)
     {
-      
+       adc_result_t adcValue = ADC_GetConversion(0);
+       uint16_t res =adcValue>>6;
+       int temp = (int)((float)res / 1023.0 * 500);
+
+
+        // Convert the ADC value to a string
+        sprintf(str, "%u",temp);
+        
+
+        LCD_WriteString("T : ");
+        LCD_WriteString(str);
+
+    __delay_ms(1000);
+    LCD_Command(0x01);  // Clear display screen
+    __delay_ms(100);
+
 
     }    
 }

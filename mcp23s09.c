@@ -12,6 +12,7 @@ an address and at least one data byte.*/
 void MCP23S09_Init(void) {
     // Set control pin as output
     TRISDbits.TRISD0 = 0; // CS
+    SPI_Init();
 
     // Initialize MCP23S09
     MCP23S09_Write(0x0A, 0xFF); //OLAT set

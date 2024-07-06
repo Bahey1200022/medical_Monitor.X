@@ -5430,22 +5430,36 @@ void LCD_WriteString(const char *str);
 void MCP23S09_Init(void);
 void MCP23S09_Write(uint8_t reg, uint8_t data);
 # 36 "main.c" 2
-
-
-
-
-
+# 45 "main.c"
 int main(void)
 {
     SYSTEM_Initialize();
-# 62 "main.c"
-    SPI_Init();
+# 66 "main.c"
    LCD_Init();
 
-LCD_WriteString("zebi manga");
+LCD_WriteString("Monitor Start");
+_delay((unsigned long)((400)*(16000000/4000.0)));
+   LCD_Command(0x01);
+
+ char str[6];
 
     while(1)
     {
+       adc_result_t adcValue = ADC_GetConversion(0);
+       uint16_t res =adcValue>>6;
+       int temp = (int)((float)res / 1023.0 * 500);
+
+
+
+        sprintf(str, "%u",temp);
+
+
+        LCD_WriteString("T : ");
+        LCD_WriteString(str);
+
+    _delay((unsigned long)((1000)*(16000000/4000.0)));
+    LCD_Command(0x01);
+    _delay((unsigned long)((100)*(16000000/4000.0)));
 
 
     }

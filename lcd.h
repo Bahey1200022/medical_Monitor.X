@@ -9,7 +9,7 @@
 #define	LCD_H
 #include "mcc_generated_files/uart/eusart.h"
 #include <xc.h>
-#define _XTAL_FREQ 4000000  // Define the clock frequency for delay functions
+#define _XTAL_FREQ 16000000  // Define the clock frequency for delay functions
 
 void LCD_Init(void);
 void LCD_Command(uint8_t cmd );

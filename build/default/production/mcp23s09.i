@@ -5433,6 +5433,7 @@ void SPI_Write(uint8_t data);
 void MCP23S09_Init(void) {
 
     TRISDbits.TRISD0 = 0;
+    SPI_Init();
 
 
     MCP23S09_Write(0x0A, 0xFF);

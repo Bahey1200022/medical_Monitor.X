@@ -461,26 +461,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;lcd.c: 6:     MCP23S09_Write(0x09, ((cmd & 0xF0) | 0x04));
 [e ( _MCP23S09_Write (2 , -> -> 9 `i `uc -> | & -> _cmd `i -> 240 `i -> 4 `i `uc ]
 "7
-[; ;lcd.c: 7:     _delay((unsigned long)((1)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;lcd.c: 7:     _delay((unsigned long)((1)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
 "8
 [; ;lcd.c: 8:     MCP23S09_Write(0x09, (cmd & 0xF0));
 [e ( _MCP23S09_Write (2 , -> -> 9 `i `uc -> & -> _cmd `i -> 240 `i `uc ]
 "9
-[; ;lcd.c: 9:     _delay((unsigned long)((2)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;lcd.c: 9:     _delay((unsigned long)((2)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "12
 [; ;lcd.c: 12:     MCP23S09_Write(0x09, (((cmd << 4) & 0xF0) | 0x04));
 [e ( _MCP23S09_Write (2 , -> -> 9 `i `uc -> | & << -> _cmd `i -> 4 `i -> 240 `i -> 4 `i `uc ]
 "13
-[; ;lcd.c: 13:     _delay((unsigned long)((1)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;lcd.c: 13:     _delay((unsigned long)((1)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
 "14
 [; ;lcd.c: 14:     MCP23S09_Write(0x09, ((cmd << 4) & 0xF0));
 [e ( _MCP23S09_Write (2 , -> -> 9 `i `uc -> & << -> _cmd `i -> 4 `i -> 240 `i `uc ]
 "15
-[; ;lcd.c: 15:     _delay((unsigned long)((2)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;lcd.c: 15:     _delay((unsigned long)((2)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "16
 [; ;lcd.c: 16: }
 [e :UE 309 ]
@@ -496,26 +496,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;lcd.c: 20:     MCP23S09_Write(0x09,( (data & 0xF0) | 0x05));
 [e ( _MCP23S09_Write (2 , -> -> 9 `i `uc -> | & -> _data `i -> 240 `i -> 5 `i `uc ]
 "21
-[; ;lcd.c: 21:     _delay((unsigned long)((1)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;lcd.c: 21:     _delay((unsigned long)((1)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
 "22
 [; ;lcd.c: 22:     MCP23S09_Write(0x09, ((data & 0xF0) |0x01));
 [e ( _MCP23S09_Write (2 , -> -> 9 `i `uc -> | & -> _data `i -> 240 `i -> 1 `i `uc ]
 "23
-[; ;lcd.c: 23:     _delay((unsigned long)((200)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;lcd.c: 23:     _delay((unsigned long)((200)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
 "26
 [; ;lcd.c: 26:     MCP23S09_Write(0x09, (((data << 4) & 0xF0) | 0x05));
 [e ( _MCP23S09_Write (2 , -> -> 9 `i `uc -> | & << -> _data `i -> 4 `i -> 240 `i -> 5 `i `uc ]
 "27
-[; ;lcd.c: 27:     _delay((unsigned long)((1)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;lcd.c: 27:     _delay((unsigned long)((1)*(16000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 16000000 `l `d .4000000.0 `ul ]
 "28
 [; ;lcd.c: 28:     MCP23S09_Write(0x09, (((data << 4) & 0xF0) |0x01));
 [e ( _MCP23S09_Write (2 , -> -> 9 `i `uc -> | & << -> _data `i -> 4 `i -> 240 `i -> 1 `i `uc ]
 "29
-[; ;lcd.c: 29:     _delay((unsigned long)((2)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;lcd.c: 29:     _delay((unsigned long)((2)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "30
 [; ;lcd.c: 30: }
 [e :UE 310 ]
@@ -557,44 +557,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;lcd.c: 39:     MCP23S09_Init();
 [e ( _MCP23S09_Init ..  ]
 "40
-[; ;lcd.c: 40:     _delay((unsigned long)((20)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;lcd.c: 40:     _delay((unsigned long)((20)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "42
 [; ;lcd.c: 42:     LCD_Command(0x33);
 [e ( _LCD_Command (1 -> -> 51 `i `uc ]
 "43
-[; ;lcd.c: 43:     _delay((unsigned long)((5)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;lcd.c: 43:     _delay((unsigned long)((5)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "44
 [; ;lcd.c: 44:     LCD_Command(0x32);
 [e ( _LCD_Command (1 -> -> 50 `i `uc ]
 "45
-[; ;lcd.c: 45:     _delay((unsigned long)((5)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;lcd.c: 45:     _delay((unsigned long)((5)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "46
 [; ;lcd.c: 46:     LCD_Command(0x28);
 [e ( _LCD_Command (1 -> -> 40 `i `uc ]
 "47
-[; ;lcd.c: 47:     _delay((unsigned long)((5)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;lcd.c: 47:     _delay((unsigned long)((5)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "48
 [; ;lcd.c: 48:     LCD_Command(0x0C);
 [e ( _LCD_Command (1 -> -> 12 `i `uc ]
 "49
-[; ;lcd.c: 49:     _delay((unsigned long)((5)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;lcd.c: 49:     _delay((unsigned long)((5)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "50
 [; ;lcd.c: 50:     LCD_Command(0x06);
 [e ( _LCD_Command (1 -> -> 6 `i `uc ]
 "51
-[; ;lcd.c: 51:     _delay((unsigned long)((5)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;lcd.c: 51:     _delay((unsigned long)((5)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "52
 [; ;lcd.c: 52:     LCD_Command(0x01);
 [e ( _LCD_Command (1 -> -> 1 `i `uc ]
 "53
-[; ;lcd.c: 53:     _delay((unsigned long)((5)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;lcd.c: 53:     _delay((unsigned long)((5)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "54
 [; ;lcd.c: 54: }
 [e :UE 315 ]

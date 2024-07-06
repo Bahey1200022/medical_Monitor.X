@@ -3,15 +3,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56 ./mcc_generated_files/system/../uart/../system/system.h
 [; ;./mcc_generated_files/system/../uart/../system/system.h: 56: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"13 ./spi.h
-[; ;./spi.h: 13: void SPI_Init(void);
-[v _SPI_Init `(v ~T0 @X0 0 ef ]
 "14 ./lcd.h
 [; ;./lcd.h: 14: void LCD_Init(void);
 [v _LCD_Init `(v ~T0 @X0 0 ef ]
 "17
 [; ;./lcd.h: 17: void LCD_WriteString(const char *str);
 [v _LCD_WriteString `(v ~T0 @X0 0 ef1`*Cuc ]
+[v F205 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v __delay `JF205 ~T0 @X0 0 e ]
+[p i __delay ]
+"15 ./lcd.h
+[; ;./lcd.h: 15: void LCD_Command(uint8_t cmd );
+[v _LCD_Command `(v ~T0 @X0 0 ef1`uc ]
+"76 main.c
+[; ;main.c: 76:        adc_result_t adcValue = ADC_GetConversion(0);
+[c E2743 15 .. ]
+[n E2743 . posChannel_FVR  ]
+"120 ./mcc_generated_files/system/../adc/adc.h
+[; ;./mcc_generated_files/system/../adc/adc.h: 120: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E2743 ]
+"121 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -454,40 +468,79 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"41 main.c
-[; ;main.c: 41: int main(void)
+"45 main.c
+[; ;main.c: 45: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"42
-[; ;main.c: 42: {
+"46
+[; ;main.c: 46: {
 {
 [e :U _main ]
 [f ]
-"43
-[; ;main.c: 43:     SYSTEM_Initialize();
+"47
+[; ;main.c: 47:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"62
-[; ;main.c: 62:     SPI_Init();
-[e ( _SPI_Init ..  ]
-"63
-[; ;main.c: 63:    LCD_Init();
+"66
+[; ;main.c: 66:    LCD_Init();
 [e ( _LCD_Init ..  ]
-"65
-[; ;main.c: 65: LCD_WriteString("zebi manga");
-[e ( _LCD_WriteString (1 :s 1C ]
-"67
-[; ;main.c: 67:     while(1)
-[e :U 311 ]
 "68
-[; ;main.c: 68:     {
+[; ;main.c: 68: LCD_WriteString("Monitor Start");
+[e ( _LCD_WriteString (1 :s 1C ]
+"69
+[; ;main.c: 69: _delay((unsigned long)((400)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 400 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"70
+[; ;main.c: 70:    LCD_Command(0x01);
+[e ( _LCD_Command (1 -> -> 1 `i `uc ]
+"72
+[; ;main.c: 72:  char str[6];
+[v _str `uc ~T0 @X0 -> 6 `i a ]
+"74
+[; ;main.c: 74:     while(1)
+[e :U 311 ]
+"75
+[; ;main.c: 75:     {
 {
-"71
-[; ;main.c: 71:     }
+"76
+[; ;main.c: 76:        adc_result_t adcValue = ADC_GetConversion(0);
+[v _adcValue `us ~T0 @X0 1 a ]
+[e = _adcValue ( _ADC_GetConversion (1 -> -> 0 `i `E2743 ]
+"77
+[; ;main.c: 77:        uint16_t res =adcValue>>6;
+[v _res `us ~T0 @X0 1 a ]
+[e = _res -> >> -> _adcValue `ui -> 6 `i `us ]
+"78
+[; ;main.c: 78:        int temp = (int)((float)res / 1023.0 * 500);
+[v _temp `i ~T0 @X0 1 a ]
+[e = _temp -> * / -> -> _res `f `d .1023.0 -> -> 500 `i `d `i ]
+"82
+[; ;main.c: 82:         sprintf(str, "%u",temp);
+[e ( _sprintf (1 , (. , &U _str :s 2C _temp ]
+"85
+[; ;main.c: 85:         LCD_WriteString("T : ");
+[e ( _LCD_WriteString (1 :s 3C ]
+"86
+[; ;main.c: 86:         LCD_WriteString(str);
+[e ( _LCD_WriteString (1 -> &U _str `*Cuc ]
+"88
+[; ;main.c: 88:     _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"89
+[; ;main.c: 89:     LCD_Command(0x01);
+[e ( _LCD_Command (1 -> -> 1 `i `uc ]
+"90
+[; ;main.c: 90:     _delay((unsigned long)((100)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"93
+[; ;main.c: 93:     }
 }
 [e :U 310 ]
 [e $U 311  ]
 [e :U 312 ]
-"72
-[; ;main.c: 72: }
+"94
+[; ;main.c: 94: }
 [e :UE 309 ]
 }
-[a 1C 122 101 98 105 32 109 97 110 103 97 0 ]
+[p f _sprintf 8389632 ]
+[a 2C 37 117 0 ]
+[a 1C 77 111 110 105 116 111 114 32 83 116 97 114 116 0 ]
+[a 3C 84 32 58 32 0 ]
