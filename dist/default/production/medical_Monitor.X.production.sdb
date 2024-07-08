@@ -7,8 +7,12 @@
 [e E2740 . `uc
 posChannel_FVR 15
 ]
-"53 C:\Users\moham\MPLABXProjects\medical_Monitor.X\main.c
+"54 C:\Users\moham\MPLABXProjects\medical_Monitor.X\main.c
 [e E2743 . `uc
+posChannel_FVR 15
+]
+"11 C:\Users\moham\MPLABXProjects\medical_Monitor.X\heart.c
+[e E2740 . `uc
 posChannel_FVR 15
 ]
 "1177 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
@@ -66,6 +70,10 @@ posChannel_FVR 15
 "10 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 [v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
+"4 C:\Users\moham\MPLABXProjects\medical_Monitor.X\heart.c
+[v _Heart_Init Heart_Init `(v  1 e 1 0 ]
+"10
+[v _Calculate_bpm Calculate_bpm `(i  1 e 2 0 ]
 "4 C:\Users\moham\MPLABXProjects\medical_Monitor.X\lcd.c
 [v _LCD_Command LCD_Command `(v  1 e 1 0 ]
 "18
@@ -74,11 +82,11 @@ posChannel_FVR 15
 [v _LCD_WriteString LCD_WriteString `(v  1 e 1 0 ]
 "38
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
-"48 C:\Users\moham\MPLABXProjects\medical_Monitor.X\main.c
+"49 C:\Users\moham\MPLABXProjects\medical_Monitor.X\main.c
 [v _Timer0_UserCallback Timer0_UserCallback `(v  1 e 1 0 ]
-"72
+"73
 [v _ISR ISR `IIH(v  1 e 1 0 ]
-"77
+"78
 [v _main main `(i  1 e 2 0 ]
 "53 C:\Users\moham\MPLABXProjects\medical_Monitor.X\mcc_generated_files/adc/src/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -159,6 +167,15 @@ posChannel_FVR 15
 [v _Timer0_ISR Timer0_ISR `(v  1 e 1 0 ]
 "32
 [v _Timer0_SetCallback Timer0_SetCallback `(v  1 e 1 0 ]
+"14 C:\Users\moham\MPLABXProjects\medical_Monitor.X/heart.h
+[v _lastTime lastTime `VEui  1 s 2 lastTime ]
+[v _lastTime@heart$F1512 lastTime `VEui  1 s 2 lastTime ]
+"15
+[v _currentTime currentTime `VEui  1 s 2 currentTime ]
+[v _currentTime@heart$F1513 currentTime `VEui  1 s 2 currentTime ]
+"16
+[v _bpm bpm `VEui  1 s 2 bpm ]
+[v _bpm@heart$F1514 bpm `VEui  1 s 2 bpm ]
 "345 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [v _WPUB WPUB `VEuc  1 e 1 @3964 ]
 "407
@@ -173,7 +190,7 @@ posChannel_FVR 15
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
 "1868
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S1363 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S1356 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -183,7 +200,7 @@ posChannel_FVR 15
 `uc 1 LATD7 1 0 :1:7 
 ]
 "1895
-[s S1372 . 1 `uc 1 LD0 1 0 :1:0 
+[s S1365 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -192,8 +209,8 @@ posChannel_FVR 15
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S1381 . 1 `S1363 1 . 1 0 `S1372 1 . 1 0 ]
-[v _LATDbits LATDbits `VES1381  1 e 1 @3980 ]
+[u S1374 . 1 `S1356 1 . 1 0 `S1365 1 . 1 0 ]
+[v _LATDbits LATDbits `VES1374  1 e 1 @3980 ]
 "1980
 [v _LATE LATE `VEuc  1 e 1 @3981 ]
 "2032
@@ -202,7 +219,7 @@ posChannel_FVR 15
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "2476
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S1010 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S1112 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -212,7 +229,7 @@ posChannel_FVR 15
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "2508
-[s S1019 . 1 `uc 1 RC0 1 0 :1:0 
+[s S1121 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -221,11 +238,11 @@ posChannel_FVR 15
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S1028 . 1 `S1010 1 . 1 0 `S1019 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES1028  1 e 1 @3988 ]
+[u S1130 . 1 `S1112 1 . 1 0 `S1121 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES1130  1 e 1 @3988 ]
 "2698
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S1316 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S1309 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -235,7 +252,7 @@ posChannel_FVR 15
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "2730
-[s S1325 . 1 `uc 1 RD0 1 0 :1:0 
+[s S1318 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -244,8 +261,8 @@ posChannel_FVR 15
 `uc 1 RD6 1 0 :1:6 
 `uc 1 RD7 1 0 :1:7 
 ]
-[u S1334 . 1 `S1316 1 . 1 0 `S1325 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES1334  1 e 1 @3989 ]
+[u S1327 . 1 `S1309 1 . 1 0 `S1318 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES1327  1 e 1 @3989 ]
 "2920
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
 "3072
@@ -399,14 +416,14 @@ posChannel_FVR 15
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
 "5473
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
-[s S1170 . 1 `uc 1 . 1 0 :2:0 
+[s S1155 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_NOT_W 1 0 :1:2 
 ]
 "5553
-[s S1173 . 1 `uc 1 . 1 0 :5:0 
+[s S1158 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 D_NOT_A 1 0 :1:5 
 ]
-[s S1176 . 1 `uc 1 BF 1 0 :1:0 
+[s S1161 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -415,55 +432,59 @@ posChannel_FVR 15
 `uc 1 CKE 1 0 :1:6 
 `uc 1 SMP 1 0 :1:7 
 ]
-[s S1185 . 1 `uc 1 . 1 0 :2:0 
+[s S1170 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S1190 . 1 `uc 1 . 1 0 :2:0 
+[s S1175 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 A 1 0 :1:5 
 ]
-[s S1195 . 1 `uc 1 . 1 0 :2:0 
+[s S1180 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S1200 . 1 `uc 1 . 1 0 :2:0 
+[s S1185 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S1205 . 1 `uc 1 . 1 0 :2:0 
+[s S1190 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_WRITE 1 0 :1:2 
 ]
-[s S1208 . 1 `uc 1 . 1 0 :5:0 
+[s S1193 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_ADDRESS 1 0 :1:5 
 ]
-[s S1211 . 1 `uc 1 . 1 0 :2:0 
+[s S1196 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S1216 . 1 `uc 1 . 1 0 :3:0 
+[s S1201 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 START 1 0 :1:3 
 `uc 1 STOP 1 0 :1:4 
 ]
-[s S1220 . 1 `uc 1 . 1 0 :2:0 
+[s S1205 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DA 1 0 :1:5 
 ]
-[s S1225 . 1 `uc 1 . 1 0 :2:0 
+[s S1210 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 NOT_A 1 0 :1:5 
 ]
-[u S1230 . 1 `S1170 1 . 1 0 `S1173 1 . 1 0 `S1176 1 . 1 0 `S1185 1 . 1 0 `S1190 1 . 1 0 `S1195 1 . 1 0 `S1200 1 . 1 0 `S1205 1 . 1 0 `S1208 1 . 1 0 `S1211 1 . 1 0 `S1216 1 . 1 0 `S1220 1 . 1 0 `S1225 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES1230  1 e 1 @4039 ]
+[u S1215 . 1 `S1155 1 . 1 0 `S1158 1 . 1 0 `S1161 1 . 1 0 `S1170 1 . 1 0 `S1175 1 . 1 0 `S1180 1 . 1 0 `S1185 1 . 1 0 `S1190 1 . 1 0 `S1193 1 . 1 0 `S1196 1 . 1 0 `S1201 1 . 1 0 `S1205 1 . 1 0 `S1210 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES1215  1 e 1 @4039 ]
 "5705
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
+"5900
+[v _T1CON T1CON `VEuc  1 e 1 @4045 ]
+"6003
+[v _TMR1 TMR1 `VEus  1 e 2 @4046 ]
 [s S247 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "6067
@@ -498,7 +519,7 @@ posChannel_FVR 15
 [v _RCONbits RCONbits `VES276  1 e 1 @4048 ]
 "6455
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
-[s S1441 . 1 `uc 1 T0PS 1 0 :3:0 
+[s S1434 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -506,12 +527,12 @@ posChannel_FVR 15
 `uc 1 TMR0ON 1 0 :1:7 
 ]
 "6552
-[s S1448 . 1 `uc 1 T0PS0 1 0 :1:0 
+[s S1441 . 1 `uc 1 T0PS0 1 0 :1:0 
 `uc 1 T0PS1 1 0 :1:1 
 `uc 1 T0PS2 1 0 :1:2 
 ]
-[u S1452 . 1 `S1441 1 . 1 0 `S1448 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES1452  1 e 1 @4053 ]
+[u S1445 . 1 `S1434 1 . 1 0 `S1441 1 . 1 0 ]
+[v _T0CONbits T0CONbits `VES1445  1 e 1 @4053 ]
 "6609
 [v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
 "6616
@@ -580,6 +601,8 @@ posChannel_FVR 15
 ]
 [u S190 . 1 `S168 1 . 1 0 `S177 1 . 1 0 `S186 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES190  1 e 1 @4082 ]
+"9023
+[v _TMR1IF TMR1IF `VEb  1 e 0 @31984 ]
 "153 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\doprnt.c
 [v _prec prec `i  1 s 2 prec ]
 [v _width width `i  1 s 2 width ]
@@ -587,7 +610,7 @@ posChannel_FVR 15
 [v _flags flags `uc  1 s 1 flags ]
 "185
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
-"45 C:\Users\moham\MPLABXProjects\medical_Monitor.X\main.c
+"46 C:\Users\moham\MPLABXProjects\medical_Monitor.X\main.c
 [v _overflow_count overflow_count `VEi  1 e 2 0 ]
 "38 C:\Users\moham\MPLABXProjects\medical_Monitor.X\mcc_generated_files/system/src/interrupt.c
 [v _INT0_InterruptHandler INT0_InterruptHandler `*.37(v  1 e 2 0 ]
@@ -609,26 +632,30 @@ posChannel_FVR 15
 [v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 s 2 EUSART_OverrunErrorHandler ]
 "3 C:\Users\moham\MPLABXProjects\medical_Monitor.X\Timer0.c
 [v _Timer0_Callback Timer0_Callback `*.37(v  1 s 2 Timer0_Callback ]
-"77 C:\Users\moham\MPLABXProjects\medical_Monitor.X\main.c
+"78 C:\Users\moham\MPLABXProjects\medical_Monitor.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"118
-[v main@temp temp `i  1 a 2 10 ]
-"117
-[v main@res res `us  1 a 2 8 ]
-"116
-[v main@adcValue adcValue `us  1 a 2 6 ]
+"127
+[v main@bpm bpm `i  1 a 2 18 ]
+"121
+[v main@temp temp `i  1 a 2 16 ]
+"120
+[v main@res res `us  1 a 2 14 ]
+"119
+[v main@adcValue adcValue `us  1 a 2 12 ]
+"111
+[v main@bpmstr bpmstr `[6]uc  1 a 6 6 ]
 "110
 [v main@str str `[6]uc  1 a 6 0 ]
-"134
+"143
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S1948 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[u S1957 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
 "13
-[s S1951 _IO_FILE 12 `S1948 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v sprintf@f f `S1951  1 a 12 40 ]
+[s S1960 _IO_FILE 12 `S1957 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v sprintf@f f `S1960  1 a 12 40 ]
 "12
 [v sprintf@ap ap `[1]*.30v  1 a 1 39 ]
 "9
@@ -641,9 +668,9 @@ posChannel_FVR 15
 {
 "1820
 [v vfprintf@cfmt cfmt `*.31uc  1 a 1 33 ]
-[s S1983 _IO_FILE 0 ]
+[s S1992 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.30S1983  1 p 1 30 ]
+[v vfprintf@fp fp `*.30S1992  1 p 1 30 ]
 [v vfprintf@fmt fmt `*.31Cuc  1 p 1 31 ]
 [v vfprintf@ap ap `*.30*.30v  1 p 1 32 ]
 "1840
@@ -651,15 +678,15 @@ posChannel_FVR 15
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S1996 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+[u S2005 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S1996  1 a 4 24 ]
+[v vfpfcnvrt@convarg convarg `S2005  1 a 4 24 ]
 "1179
 [v vfpfcnvrt@c c `uc  1 a 1 29 ]
 [v vfpfcnvrt@cp cp `*.31uc  1 a 1 28 ]
-[s S1983 _IO_FILE 0 ]
+[s S1992 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.30S1983  1 p 1 20 ]
+[v vfpfcnvrt@fp fp `*.30S1992  1 p 1 20 ]
 [v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 21 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 22 ]
 "1814
@@ -668,9 +695,9 @@ posChannel_FVR 15
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 12 ]
-[u S1948 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1951 _IO_FILE 12 `S1948 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v fputc@fp fp `*.30S1951  1 p 1 14 ]
+[u S1957 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1960 _IO_FILE 12 `S1957 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputc@fp fp `*.30S1960  1 p 1 14 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\putch.c
@@ -699,76 +726,6 @@ posChannel_FVR 15
 [v ___lwdiv@dividend dividend `ui  1 p 2 12 ]
 [v ___lwdiv@divisor divisor `ui  1 p 2 14 ]
 "30
-} 0
-"10 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\xxtofl.c
-[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-{
-[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-"13
-[v ___xxtofl@arg arg `ul  1 a 4 22 ]
-"12
-[v ___xxtofl@exp exp `uc  1 a 1 21 ]
-"10
-[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 12 ]
-"15
-[v ___xxtofl@sign sign `uc  1 a 1 20 ]
-"44
-} 0
-"43 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\fltol.c
-[v ___fltol __fltol `(l  1 e 4 0 ]
-{
-"45
-[v ___fltol@exp1 exp1 `uc  1 a 1 85 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 84 ]
-"43
-[v ___fltol@f1 f1 `d  1 p 4 76 ]
-"70
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
-{
-[s S1813 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
-"13
-[s S1818 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S1821 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1813 1 fAsBytes 4 0 `S1818 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1821  1 a 4 70 ]
-"12
-[v ___flmul@grs grs `ul  1 a 4 65 ]
-[s S1889 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
-"14
-[u S1892 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1889 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1892  1 a 2 74 ]
-"10
-[v ___flmul@bexp bexp `uc  1 a 1 69 ]
-"11
-[v ___flmul@aexp aexp `uc  1 a 1 64 ]
-"9
-[v ___flmul@sign sign `uc  1 a 1 63 ]
-"8
-[v ___flmul@b b `d  1 p 4 51 ]
-[v ___flmul@a a `d  1 p 4 55 ]
-"205
-} 0
-"11 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcdiv.c
-[v ___fldiv __fldiv `(d  1 e 4 0 ]
-{
-"21
-[v ___fldiv@grs grs `ul  1 a 4 45 ]
-"22
-[v ___fldiv@rem rem `ul  1 a 4 38 ]
-"20
-[v ___fldiv@new_exp new_exp `s  1 a 2 43 ]
-"19
-[v ___fldiv@aexp aexp `uc  1 a 1 50 ]
-"18
-[v ___fldiv@bexp bexp `uc  1 a 1 49 ]
-"16
-[v ___fldiv@sign sign `uc  1 a 1 42 ]
-"11
-[v ___fldiv@b b `d  1 p 4 26 ]
-[v ___fldiv@a a `d  1 p 4 30 ]
-"185
 } 0
 "32 C:\Users\moham\MPLABXProjects\medical_Monitor.X\Timer0.c
 [v _Timer0_SetCallback Timer0_SetCallback `(v  1 e 1 0 ]
@@ -897,6 +854,92 @@ posChannel_FVR 15
 [v SPI_Write@data data `uc  1 a 1 12 ]
 "16
 } 0
+"4 C:\Users\moham\MPLABXProjects\medical_Monitor.X\heart.c
+[v _Heart_Init Heart_Init `(v  1 e 1 0 ]
+{
+"8
+} 0
+"10
+[v _Calculate_bpm Calculate_bpm `(i  1 e 2 0 ]
+{
+"18
+[v Calculate_bpm@timeDifference timeDifference `ui  1 a 2 95 ]
+"12
+[v Calculate_bpm@res1 res1 `us  1 a 2 93 ]
+"11
+[v Calculate_bpm@adcValue adcValue `ui  1 a 2 91 ]
+"28
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 22 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 21 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 12 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 20 ]
+"44
+} 0
+"43 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 85 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 84 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 76 ]
+"70
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S1822 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S1827 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1830 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1822 1 fAsBytes 4 0 `S1827 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1830  1 a 4 70 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 65 ]
+[s S1898 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S1901 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1898 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1901  1 a 2 74 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 69 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 64 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 63 ]
+"8
+[v ___flmul@b b `d  1 p 4 51 ]
+[v ___flmul@a a `d  1 p 4 55 ]
+"205
+} 0
+"11 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 45 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 38 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 43 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 50 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 49 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 42 ]
+"11
+[v ___fldiv@b b `d  1 p 4 26 ]
+[v ___fldiv@a a `d  1 p 4 30 ]
+"185
+} 0
 "92 C:\Users\moham\MPLABXProjects\medical_Monitor.X\mcc_generated_files/adc/src/adc.c
 [v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
 {
@@ -906,38 +949,38 @@ posChannel_FVR 15
 [v ADC_GetConversion@channel channel `E2740  1 a 1 16 ]
 "109
 } 0
-"72 C:\Users\moham\MPLABXProjects\medical_Monitor.X\main.c
+"73 C:\Users\moham\MPLABXProjects\medical_Monitor.X\main.c
 [v _ISR ISR `IIH(v  1 e 1 0 ]
 {
-"75
+"76
 } 0
 "21 C:\Users\moham\MPLABXProjects\medical_Monitor.X\Timer0.c
 [v _Timer0_ISR Timer0_ISR `(v  1 e 1 0 ]
 {
 "30
 } 0
-"48 C:\Users\moham\MPLABXProjects\medical_Monitor.X\main.c
+"49 C:\Users\moham\MPLABXProjects\medical_Monitor.X\main.c
 [v _Timer0_UserCallback Timer0_UserCallback `(v  1 e 1 0 ]
 {
-"52
-[v Timer0_UserCallback@str str `[6]uc  1 a 6 77 ]
-"55
-[v Timer0_UserCallback@temp temp `i  1 a 2 87 ]
-"54
-[v Timer0_UserCallback@res res `us  1 a 2 85 ]
 "53
-[v Timer0_UserCallback@adcValue adcValue `us  1 a 2 83 ]
+[v Timer0_UserCallback@str str `[6]uc  1 a 6 77 ]
 "56
+[v Timer0_UserCallback@temp temp `i  1 a 2 87 ]
+"55
+[v Timer0_UserCallback@res res `us  1 a 2 85 ]
+"54
+[v Timer0_UserCallback@adcValue adcValue `us  1 a 2 83 ]
+"57
 [v Timer0_UserCallback@temp_uint8 temp_uint8 `uc  1 a 1 89 ]
-"70
+"71
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\nf_sprintf.c
 [v i2_sprintf sprintf `(i  1 e 2 0 ]
 {
-[u S1948 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[u S1957 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
 "13
-[s S1951 _IO_FILE 12 `S1948 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v i2sprintf@f f `S1951  1 a 12 28 ]
+[s S1960 _IO_FILE 12 `S1957 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v i2sprintf@f f `S1960  1 a 12 28 ]
 "12
 [v i2sprintf@ap ap `[1]*.30v  1 a 1 27 ]
 "9
@@ -950,9 +993,9 @@ posChannel_FVR 15
 {
 "1820
 [v i2vfprintf@cfmt cfmt `*.31uc  1 a 1 21 ]
-[s S1983 _IO_FILE 0 ]
+[s S1992 _IO_FILE 0 ]
 "1817
-[v i2vfprintf@fp fp `*.30S1983  1 p 1 18 ]
+[v i2vfprintf@fp fp `*.30S1992  1 p 1 18 ]
 [v i2vfprintf@fmt fmt `*.31Cuc  1 p 1 19 ]
 [v i2vfprintf@ap ap `*.30*.30v  1 p 1 20 ]
 "1840
@@ -960,15 +1003,15 @@ posChannel_FVR 15
 "1177
 [v i2_vfpfcnvrt vfpfcnvrt `(v  1 s 1 i2_vfpfcnvrt ]
 {
-[u S1996 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+[u S2005 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
 "1188
-[v i2vfpfcnvrt@convarg convarg `S1996  1 a 4 12 ]
+[v i2vfpfcnvrt@convarg convarg `S2005  1 a 4 12 ]
 "1179
 [v i2vfpfcnvrt@c c `uc  1 a 1 17 ]
 [v i2vfpfcnvrt@cp cp `*.31uc  1 a 1 16 ]
-[s S1983 _IO_FILE 0 ]
+[s S1992 _IO_FILE 0 ]
 "1177
-[v i2vfpfcnvrt@fp fp `*.30S1983  1 p 1 8 ]
+[v i2vfpfcnvrt@fp fp `*.30S1992  1 p 1 8 ]
 [v i2vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 9 ]
 [v i2vfpfcnvrt@ap ap `*.30*.30v  1 p 1 10 ]
 "1814
@@ -977,9 +1020,9 @@ posChannel_FVR 15
 [v i2_fputc fputc `(i  1 e 2 0 ]
 {
 [v i2fputc@c c `i  1 p 2 0 ]
-[u S1948 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
-[s S1951 _IO_FILE 12 `S1948 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
-[v i2fputc@fp fp `*.30S1951  1 p 1 2 ]
+[u S1957 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S1960 _IO_FILE 12 `S1957 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v i2fputc@fp fp `*.30S1960  1 p 1 2 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\putch.c
@@ -1037,17 +1080,17 @@ posChannel_FVR 15
 "8 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcmul.c
 [v i2___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1813 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1822 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1818 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S1821 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1813 1 fAsBytes 4 0 `S1818 1 fAsWords 4 0 ]
-[v i2___flmul@prod prod `S1821  1 a 4 58 ]
+[s S1827 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1830 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1822 1 fAsBytes 4 0 `S1827 1 fAsWords 4 0 ]
+[v i2___flmul@prod prod `S1830  1 a 4 58 ]
 "12
 [v i2___flmul@grs grs `ul  1 a 4 52 ]
-[s S1889 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S1898 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1892 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1889 1 nAsBytes 2 0 ]
-[v i2___flmul@temp temp `S1892  1 a 2 62 ]
+[u S1901 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1898 1 nAsBytes 2 0 ]
+[v i2___flmul@temp temp `S1901  1 a 2 62 ]
 "10
 [v i2___flmul@bexp bexp `uc  1 a 1 57 ]
 "11

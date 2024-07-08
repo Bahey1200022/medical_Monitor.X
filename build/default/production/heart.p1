@@ -1,69 +1,24 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"54 main.c
-[; ;main.c: 54:          adc_result_t adcValue = ADC_GetConversion(0);
-[c E2743 15 .. ]
-[n E2743 . posChannel_FVR  ]
+"5900 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 5900: extern volatile unsigned char T1CON __attribute__((address(0xFCD)));
+[v _T1CON `Vuc ~T0 @X0 0 e@4045 ]
+"6003
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 6003: extern volatile unsigned short TMR1 __attribute__((address(0xFCE)));
+[v _TMR1 `Vus ~T0 @X0 0 e@4046 ]
+"9023
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 9023: extern volatile __bit TMR1IF __attribute__((address(0x7CF0)));
+[v _TMR1IF `Vb ~T0 @X0 0 e@31984 ]
+"11 heart.c
+[; ;heart.c: 11:             unsigned int adcValue = ADC_GetConversion(1);
+[c E2740 15 .. ]
+[n E2740 . posChannel_FVR  ]
 "120 ./mcc_generated_files/adc/adc.h
-[v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E2743 ]
-"121 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h
-[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"299 ./mcc_generated_files/uart/eusart.h
-[v _EUSART_WriteString `(v ~T0 @X0 0 ef1`*Cuc ]
+[; ;./mcc_generated_files/adc/adc.h: 120: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E2740 ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-[t ~ __interrupt . k ]
-[t T40 __interrupt ]
-"20 ./Timer0.h
-[; ;./Timer0.h: 20: void Timer0_ISR(void);
-[v _Timer0_ISR `(v ~T0 @X0 0 ef ]
-[p mainexit ]
-"56 ./mcc_generated_files/system/../uart/../system/system.h
-[; ;./mcc_generated_files/system/../uart/../system/system.h: 56: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"7049 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7049:     struct {
-[s S297 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S297 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"7059
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7059:     struct {
-[s S298 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S298 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"7069
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7069:     struct {
-[s S299 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S299 . . GIEL GIEH ]
-"7048
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7048: typedef union {
-[u S296 `S297 1 `S298 1 `S299 1 ]
-[n S296 . . . . ]
-"7075
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7075: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS296 ~T0 @X0 0 e@4082 ]
-"14 ./lcd.h
-[; ;./lcd.h: 14: void LCD_Init(void);
-[v _LCD_Init `(v ~T0 @X0 0 ef ]
-"17
-[; ;./lcd.h: 17: void LCD_WriteString(const char *str);
-[v _LCD_WriteString `(v ~T0 @X0 0 ef1`*Cuc ]
-"15
-[; ;./lcd.h: 15: void LCD_Command(uint8_t cmd );
-[v _LCD_Command `(v ~T0 @X0 0 ef1`uc ]
-"18 ./heart.h
-[; ;./heart.h: 18: void Heart_Init(void);
-[v _Heart_Init `(v ~T0 @X0 0 ef ]
-"19 ./Timer0.h
-[; ;./Timer0.h: 19: void Timer0_Initialize(void);
-[v _Timer0_Initialize `(v ~T0 @X0 0 ef ]
-[v F3249 `(v ~T0 @X0 0 tf ]
-"21
-[; ;./Timer0.h: 21: void Timer0_SetCallback(void (*callback)(void));
-[v _Timer0_SetCallback `(v ~T0 @X0 0 ef1`*F3249 ]
-"20 ./heart.h
-[; ;./heart.h: 20: int Calculate_bpm(void);
-[v _Calculate_bpm `(i ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -523,192 +478,76 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _bpm
 -> -> 0 `i `ui
 ]
-"46 main.c
-[; ;main.c: 46: volatile int overflow_count = 0;
-[v _overflow_count `Vi ~T0 @X0 1 e ]
-[i _overflow_count
--> 0 `i
-]
-"49
-[; ;main.c: 49: void Timer0_UserCallback(void) {
-[v _Timer0_UserCallback `(v ~T0 @X0 1 ef ]
+"4 heart.c
+[; ;heart.c: 4: void Heart_Init(void){
+[v _Heart_Init `(v ~T0 @X0 1 ef ]
 {
-[e :U _Timer0_UserCallback ]
+[e :U _Heart_Init ]
 [f ]
-"50
-[; ;main.c: 50:     overflow_count++;
-[e ++ _overflow_count -> -> 1 `i `Vi ]
-"51
-[; ;main.c: 51:     if (overflow_count == 10) {
-[e $ ! == _overflow_count -> 10 `i 310  ]
-{
-"52
-[; ;main.c: 52:         overflow_count = 0;
-[e = _overflow_count -> 0 `i ]
-"53
-[; ;main.c: 53:          char str[6];
-[v _str `uc ~T0 @X0 -> 6 `i a ]
-"54
-[; ;main.c: 54:          adc_result_t adcValue = ADC_GetConversion(0);
-[v _adcValue `us ~T0 @X0 1 a ]
-[e = _adcValue ( _ADC_GetConversion (1 -> -> 0 `i `E2743 ]
-"55
-[; ;main.c: 55:        uint16_t res =adcValue>>6;
-[v _res `us ~T0 @X0 1 a ]
-[e = _res -> >> -> _adcValue `ui -> 6 `i `us ]
-"56
-[; ;main.c: 56:        int temp = (int)((float)res / 1023.0 * 500);
-[v _temp `i ~T0 @X0 1 a ]
-[e = _temp -> * / -> -> _res `f `d .1023.0 -> -> 500 `i `d `i ]
-"57
-[; ;main.c: 57:         uint8_t temp_uint8 = (uint8_t)temp;
-[v _temp_uint8 `uc ~T0 @X0 1 a ]
-[e = _temp_uint8 -> _temp `uc ]
-"60
-[; ;main.c: 60:         sprintf(str, "Temp: %u\r\n", temp_uint8);
-[e ( _sprintf (1 , (. , &U _str :s 1C -> _temp_uint8 `i ]
-"66
-[; ;main.c: 66:         EUSART_WriteString(str);
-[e ( _EUSART_WriteString (1 -> &U _str `*Cuc ]
-"67
-[; ;main.c: 67:         _delay((unsigned long)((100)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"70
-[; ;main.c: 70:     }
+"5
+[; ;heart.c: 5:     T1CON = 0x31;
+[e = _T1CON -> -> 49 `i `uc ]
+"6
+[; ;heart.c: 6:     TMR1 = 0;
+[e = _TMR1 -> -> 0 `i `us ]
+"7
+[; ;heart.c: 7:     TMR1IF = 0;
+[e = _TMR1IF -> -> 0 `i `b ]
+"8
+[; ;heart.c: 8: }
+[e :UE 304 ]
 }
-[e :U 310 ]
-"71
-[; ;main.c: 71: }
-[e :UE 309 ]
-}
-[v $root$_ISR `(v ~T0 @X0 0 e ]
-"73
-[; ;main.c: 73: void __attribute__((picinterrupt(("")))) ISR(void) {
-[v _ISR `(v ~T40 @X0 1 ef ]
+"10
+[; ;heart.c: 10: int Calculate_bpm(void){
+[v _Calculate_bpm `(i ~T0 @X0 1 ef ]
 {
-[e :U _ISR ]
+[e :U _Calculate_bpm ]
 [f ]
-"75
-[; ;main.c: 75:     Timer0_ISR();
-[e ( _Timer0_ISR ..  ]
-"76
-[; ;main.c: 76: }
-[e :UE 311 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"78
-[; ;main.c: 78: int main(void)
-[v _main `(i ~T0 @X0 1 ef ]
-"79
-[; ;main.c: 79: {
+"11
+[; ;heart.c: 11:             unsigned int adcValue = ADC_GetConversion(1);
+[v _adcValue `ui ~T0 @X0 1 a ]
+[e = _adcValue -> ( _ADC_GetConversion (1 -> -> 1 `i `E2740 `ui ]
+"12
+[; ;heart.c: 12:             uint16_t res1 =adcValue>>6;
+[v _res1 `us ~T0 @X0 1 a ]
+[e = _res1 -> >> _adcValue -> 6 `i `us ]
+"15
+[; ;heart.c: 15:     if (res1 > 450) {
+[e $ ! > -> _res1 `ui -> -> 450 `i `ui 306  ]
 {
-[e :U _main ]
-[f ]
-"80
-[; ;main.c: 80:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"93
-[; ;main.c: 93:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"99
-[; ;main.c: 99:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"104
-[; ;main.c: 104:    LCD_Init();
-[e ( _LCD_Init ..  ]
-"106
-[; ;main.c: 106: LCD_WriteString("Monitor Start");
-[e ( _LCD_WriteString (1 :s 2C ]
-"107
-[; ;main.c: 107: _delay((unsigned long)((400)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 400 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"108
-[; ;main.c: 108:    LCD_Command(0x01);
-[e ( _LCD_Command (1 -> -> 1 `i `uc ]
-"110
-[; ;main.c: 110:  char str[6];
-[v _str `uc ~T0 @X0 -> 6 `i a ]
-"111
-[; ;main.c: 111:  char bpmstr[6];
-[v _bpmstr `uc ~T0 @X0 -> 6 `i a ]
-"113
-[; ;main.c: 113:  Heart_Init();
-[e ( _Heart_Init ..  ]
-"114
-[; ;main.c: 114:  Timer0_Initialize();
-[e ( _Timer0_Initialize ..  ]
-"115
-[; ;main.c: 115:  Timer0_SetCallback(Timer0_UserCallback);
-[e ( _Timer0_SetCallback (1 &U _Timer0_UserCallback ]
-"116
-[; ;main.c: 116:     while(1)
-[e :U 314 ]
-"117
-[; ;main.c: 117:     {
+"17
+[; ;heart.c: 17:             currentTime = TMR1;
+[e = _currentTime -> _TMR1 `ui ]
+"18
+[; ;heart.c: 18:             unsigned int timeDifference = currentTime - lastTime;
+[v _timeDifference `ui ~T0 @X0 1 a ]
+[e = _timeDifference - _currentTime _lastTime ]
+"19
+[; ;heart.c: 19:             lastTime = currentTime;
+[e = _lastTime _currentTime ]
+"21
+[; ;heart.c: 21:             if (timeDifference > 0) {
+[e $ ! > _timeDifference -> -> 0 `i `ui 307  ]
 {
-"119
-[; ;main.c: 119:        adc_result_t adcValue = ADC_GetConversion(0);
-[v _adcValue `us ~T0 @X0 1 a ]
-[e = _adcValue ( _ADC_GetConversion (1 -> -> 0 `i `E2743 ]
-"120
-[; ;main.c: 120:        uint16_t res =adcValue>>6;
-[v _res `us ~T0 @X0 1 a ]
-[e = _res -> >> -> _adcValue `ui -> 6 `i `us ]
-"121
-[; ;main.c: 121:        int temp = (int)((float)res / 1023.0 * 500);
-[v _temp `i ~T0 @X0 1 a ]
-[e = _temp -> * / -> -> _res `f `d .1023.0 -> -> 500 `i `d `i ]
-"124
-[; ;main.c: 124:         sprintf(str, "%u",temp);
-[e ( _sprintf (1 , (. , &U _str :s 3C _temp ]
-"127
-[; ;main.c: 127:         int bpm=Calculate_bpm();
-[v _bpm `i ~T0 @X0 1 a ]
-[e = _bpm ( _Calculate_bpm ..  ]
-"128
-[; ;main.c: 128:          sprintf(bpmstr, "%u",bpm);
-[e ( _sprintf (1 , (. , &U _bpmstr :s 4C _bpm ]
-"131
-[; ;main.c: 131:         LCD_WriteString("T : ");
-[e ( _LCD_WriteString (1 :s 5C ]
-"132
-[; ;main.c: 132:         LCD_WriteString(str);
-[e ( _LCD_WriteString (1 -> &U _str `*Cuc ]
-"133
-[; ;main.c: 133:         _delay((unsigned long)((100)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"134
-[; ;main.c: 134:         LCD_Command(0xC0);
-[e ( _LCD_Command (1 -> -> 192 `i `uc ]
-"135
-[; ;main.c: 135:         LCD_WriteString("BPM : ");
-[e ( _LCD_WriteString (1 :s 6C ]
-"136
-[; ;main.c: 136:         LCD_WriteString(bpmstr);
-[e ( _LCD_WriteString (1 -> &U _bpmstr `*Cuc ]
-"138
-[; ;main.c: 138:         _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"139
-[; ;main.c: 139:         LCD_Command(0x01);
-[e ( _LCD_Command (1 -> -> 1 `i `uc ]
-"140
-[; ;main.c: 140:         _delay((unsigned long)((50)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"142
-[; ;main.c: 142:     }
+"22
+[; ;heart.c: 22:                 bpm = (unsigned int)(60.0 / (timeDifference * (1.0 / (16000000 / 32.0))));
+[e = _bpm -> / .60.0 * -> _timeDifference `d / .1.0 / -> -> 16000000 `l `d .32.0 `ui ]
+"23
+[; ;heart.c: 23:             }
 }
-[e :U 313 ]
-[e $U 314  ]
-[e :U 315 ]
-"143
-[; ;main.c: 143: }
-[e :UE 312 ]
+[e :U 307 ]
+"25
+[; ;heart.c: 25:             _delay((unsigned long)((300)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"26
+[; ;heart.c: 26:         }
 }
-[p f _sprintf 8389632 ]
-[a 3C 37 117 0 ]
-[a 4C 37 117 0 ]
-[a 2C 77 111 110 105 116 111 114 32 83 116 97 114 116 0 ]
-[a 5C 84 32 58 32 0 ]
-[a 6C 66 80 77 32 58 32 0 ]
-[a 1C 84 101 109 112 58 32 37 117 13 10 0 ]
+[e :U 306 ]
+"27
+[; ;heart.c: 27:             return bpm;
+[e ) -> _bpm `i ]
+[e $UE 305  ]
+"28
+[; ;heart.c: 28: }
+[e :UE 305 ]
+}

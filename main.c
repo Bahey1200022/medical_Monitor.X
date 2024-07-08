@@ -39,6 +39,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include "../xc.h"
+#include "heart.h"
 /*
     Main application
 */
@@ -47,7 +48,7 @@ volatile int overflow_count = 0;
 
 void Timer0_UserCallback(void) {
     overflow_count++;
-    if (overflow_count >= 10) {
+    if (overflow_count == 10) {
         overflow_count = 0;
          char str[6]; // Adjust the size if needed
          adc_result_t adcValue = ADC_GetConversion(0);
@@ -78,7 +79,6 @@ int main(void)
 {
     SYSTEM_Initialize();
    
-    TRISCbits.TRISC2=0;   /// int debug not working 
 
     
 
@@ -108,27 +108,36 @@ __delay_ms(400);
    LCD_Command(0x01);  // Clear display screen
 
  char str[6]; // Adjust the size if needed
+ char bpmstr[6]; // Adjust the size if needed
 
+ Heart_Init();
  Timer0_Initialize();
  Timer0_SetCallback(Timer0_UserCallback);
     while(1)
     {
+        //temp reading
        adc_result_t adcValue = ADC_GetConversion(0);
        uint16_t res =adcValue>>6;
        int temp = (int)((float)res / 1023.0 * 500);
        
         // Convert the ADC value to a string
-
         sprintf(str, "%u",temp);
         
+        ///BPM ??
+        int bpm=Calculate_bpm();
+         sprintf(bpmstr, "%u",bpm);
+
 
         LCD_WriteString("T : ");
         LCD_WriteString(str);
+        __delay_ms(100);
+        LCD_Command(0xC0); //next lines
+        LCD_WriteString("BPM : ");
+        LCD_WriteString(bpmstr);
 
-    __delay_ms(1000);
-    LCD_Command(0x01);  // Clear display screen
-    __delay_ms(100);
-
+        __delay_ms(1000);
+        LCD_Command(0x01);  // Clear display screen
+        __delay_ms(50);
 
     }    
 }
