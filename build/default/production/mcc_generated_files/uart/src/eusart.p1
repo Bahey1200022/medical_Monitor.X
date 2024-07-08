@@ -67,20 +67,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "210
 [; ;mcc_generated_files/uart/src/../../system/../uart/eusart.h: 210: _Bool EUSART_AutoBaudQuery(void);
 [v _EUSART_AutoBaudQuery `(a ~T0 @X0 0 ef ]
-[v F3244 `(a ~T0 @X0 0 tf ]
-[v F3245 `(v ~T0 @X0 0 tf1`ul ]
-[v F3247 `(ul ~T0 @X0 0 tf ]
-[v F3248 `(v ~T0 @X0 0 tf1`ul ]
-[v F3250 `(ul ~T0 @X0 0 tf ]
+[v F3246 `(a ~T0 @X0 0 tf ]
+[v F3247 `(v ~T0 @X0 0 tf1`ul ]
+[v F3249 `(ul ~T0 @X0 0 tf ]
+[v F3250 `(v ~T0 @X0 0 tf1`ul ]
+[v F3252 `(ul ~T0 @X0 0 tf ]
 "261
 [; ;mcc_generated_files/uart/src/../../system/../uart/eusart.h: 261: size_t EUSART_ErrorGet(void);
 [v _EUSART_ErrorGet `(ui ~T0 @X0 0 ef ]
-[v F3253 `(v ~T0 @X0 0 tf ]
-[v F3252 `(v ~T0 @X0 0 tf1`*F3253 ]
-[v F3256 `(v ~T0 @X0 0 tf ]
-[v F3255 `(v ~T0 @X0 0 tf1`*F3256 ]
-[v F3259 `(v ~T0 @X0 0 tf ]
-[v F3258 `(v ~T0 @X0 0 tf1`*F3259 ]
+[v F3255 `(v ~T0 @X0 0 tf ]
+[v F3254 `(v ~T0 @X0 0 tf1`*F3255 ]
+[v F3258 `(v ~T0 @X0 0 tf ]
+[v F3257 `(v ~T0 @X0 0 tf1`*F3258 ]
+[v F3261 `(v ~T0 @X0 0 tf ]
+[v F3260 `(v ~T0 @X0 0 tf1`*F3261 ]
 [v F3223 `(v ~T0 @X0 0 tf ]
 "289
 [; ;mcc_generated_files/uart/src/../../system/../uart/eusart.h: 289: void EUSART_FramingErrorCallbackRegister(void (* callbackHandler)(void));
@@ -89,10 +89,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "297
 [; ;mcc_generated_files/uart/src/../../system/../uart/eusart.h: 297: void EUSART_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 [v _EUSART_OverrunErrorCallbackRegister `(v ~T0 @X0 0 ef1`*F3227 ]
-[v F3268 `(v ~T0 @X0 0 tf ]
-[v F3267 `(v ~T0 @X0 0 tf1`*F3268 ]
-[v F3271 `(v ~T0 @X0 0 tf ]
-[v F3270 `(v ~T0 @X0 0 tf1`*F3271 ]
+[v F3270 `(v ~T0 @X0 0 tf ]
+[v F3269 `(v ~T0 @X0 0 tf1`*F3270 ]
+[v F3273 `(v ~T0 @X0 0 tf ]
+[v F3272 `(v ~T0 @X0 0 tf1`*F3273 ]
 "93
 [; ;mcc_generated_files/uart/src/../../system/../uart/eusart.h: 93:     struct {
 [s S308 :1 `uc 1 :1 `uc 1 :1 `uc 1 :5 `uc 1 ]
@@ -101,10 +101,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/uart/src/../../system/../uart/eusart.h: 92: typedef union {
 [u S307 `S308 1 `ui 1 ]
 [n S307 . . status ]
-[v F3275 `(v ~T0 @X0 0 tf ]
-[v F3276 `(v ~T0 @X0 0 tf ]
+[v F3277 `(v ~T0 @X0 0 tf ]
 [v F3278 `(v ~T0 @X0 0 tf ]
-[v F3279 `(v ~T0 @X0 0 tf ]
+[v F3280 `(v ~T0 @X0 0 tf ]
+[v F3281 `(v ~T0 @X0 0 tf ]
 "4681 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 4681: extern volatile unsigned char BAUDCON __attribute__((address(0xFB8)));
 [v _BAUDCON `Vuc ~T0 @X0 0 e@4024 ]
@@ -218,20 +218,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3241
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 3241: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
 [v _PIR1bits `VS121 ~T0 @X0 0 e@3998 ]
-[v F3304 `(v ~T0 @X0 0 tf ]
-[v F3305 `(v ~T0 @X0 0 tf ]
+[v F3306 `(v ~T0 @X0 0 tf ]
+[v F3307 `(v ~T0 @X0 0 tf ]
 "4259
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 4259: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
 [v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
 "4247
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 4247: extern volatile unsigned char TXREG __attribute__((address(0xFAD)));
 [v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
-[v F3311 `(v ~T0 @X0 0 tf ]
 [v F3313 `(v ~T0 @X0 0 tf ]
-[v F3314 `(v ~T0 @X0 0 tf ]
-[v F3317 `(v ~T0 @X0 0 tf ]
+[v F3315 `(v ~T0 @X0 0 tf ]
+[v F3316 `(v ~T0 @X0 0 tf ]
 [v F3319 `(v ~T0 @X0 0 tf ]
-[v F3320 `(v ~T0 @X0 0 tf ]
+[v F3321 `(v ~T0 @X0 0 tf ]
+[v F3322 `(v ~T0 @X0 0 tf ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -690,19 +690,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 &U _EUSART_TransmitDisable
 &U _EUSART_AutoBaudSet
 &U _EUSART_AutoBaudQuery
--> -> -> 0 `i `*v `*F3244
--> -> -> 0 `i `*v `*F3245
+-> -> -> 0 `i `*v `*F3246
 -> -> -> 0 `i `*v `*F3247
--> -> -> 0 `i `*v `*F3248
+-> -> -> 0 `i `*v `*F3249
 -> -> -> 0 `i `*v `*F3250
-&U _EUSART_ErrorGet
 -> -> -> 0 `i `*v `*F3252
--> -> -> 0 `i `*v `*F3255
--> -> -> 0 `i `*v `*F3258
+&U _EUSART_ErrorGet
+-> -> -> 0 `i `*v `*F3254
+-> -> -> 0 `i `*v `*F3257
+-> -> -> 0 `i `*v `*F3260
 &U _EUSART_FramingErrorCallbackRegister
 &U _EUSART_OverrunErrorCallbackRegister
--> -> -> 0 `i `*v `*F3267
--> -> -> 0 `i `*v `*F3270
+-> -> -> 0 `i `*v `*F3269
+-> -> -> 0 `i `*v `*F3272
 ..
 ..
 ]
@@ -711,15 +711,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _eusartRxLastError `VS307 ~T0 @X0 1 s ]
 "83
 [; ;mcc_generated_files/uart/src/eusart.c: 83: static void (*EUSART_FramingErrorHandler)(void) = ((void*)0);
-[v _EUSART_FramingErrorHandler `*F3275 ~T0 @X0 1 s ]
+[v _EUSART_FramingErrorHandler `*F3277 ~T0 @X0 1 s ]
 [i _EUSART_FramingErrorHandler
--> -> -> 0 `i `*v `*F3276
+-> -> -> 0 `i `*v `*F3278
 ]
 "84
 [; ;mcc_generated_files/uart/src/eusart.c: 84: static void (*EUSART_OverrunErrorHandler)(void) = ((void*)0);
-[v _EUSART_OverrunErrorHandler `*F3278 ~T0 @X0 1 s ]
+[v _EUSART_OverrunErrorHandler `*F3280 ~T0 @X0 1 s ]
 [i _EUSART_OverrunErrorHandler
--> -> -> 0 `i `*v `*F3279
+-> -> -> 0 `i `*v `*F3281
 ]
 "94
 [; ;mcc_generated_files/uart/src/eusart.c: 94: void EUSART_Initialize(void)
@@ -1080,7 +1080,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _eusartRxLastError 0 2 -> -> 1 `i `uc ]
 "219
 [; ;mcc_generated_files/uart/src/eusart.c: 219:         if(((void*)0) != EUSART_OverrunErrorHandler)
-[e $ ! != -> -> -> 0 `i `*v `*F3304 _EUSART_OverrunErrorHandler 331  ]
+[e $ ! != -> -> -> 0 `i `*v `*F3306 _EUSART_OverrunErrorHandler 331  ]
 "220
 [; ;mcc_generated_files/uart/src/eusart.c: 220:         {
 {
@@ -1106,7 +1106,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _eusartRxLastError 0 1 -> -> 1 `i `uc ]
 "227
 [; ;mcc_generated_files/uart/src/eusart.c: 227:         if(((void*)0) != EUSART_FramingErrorHandler)
-[e $ ! != -> -> -> 0 `i `*v `*F3305 _EUSART_FramingErrorHandler 333  ]
+[e $ ! != -> -> -> 0 `i `*v `*F3307 _EUSART_FramingErrorHandler 333  ]
 "228
 [; ;mcc_generated_files/uart/src/eusart.c: 228:         {
 {
@@ -1181,20 +1181,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "252
 [; ;mcc_generated_files/uart/src/eusart.c: 252: void EUSART_FramingErrorCallbackRegister(void (* callbackHandler)(void))
-[v _EUSART_FramingErrorCallbackRegister `(v ~T0 @X0 1 ef1`*F3311 ]
+[v _EUSART_FramingErrorCallbackRegister `(v ~T0 @X0 1 ef1`*F3313 ]
 "253
 [; ;mcc_generated_files/uart/src/eusart.c: 253: {
 {
 [e :U _EUSART_FramingErrorCallbackRegister ]
 "252
 [; ;mcc_generated_files/uart/src/eusart.c: 252: void EUSART_FramingErrorCallbackRegister(void (* callbackHandler)(void))
-[v _callbackHandler `*F3313 ~T0 @X0 1 r1 ]
+[v _callbackHandler `*F3315 ~T0 @X0 1 r1 ]
 "253
 [; ;mcc_generated_files/uart/src/eusart.c: 253: {
 [f ]
 "254
 [; ;mcc_generated_files/uart/src/eusart.c: 254:     if(((void*)0) != callbackHandler)
-[e $ ! != -> -> -> 0 `i `*v `*F3314 _callbackHandler 338  ]
+[e $ ! != -> -> -> 0 `i `*v `*F3316 _callbackHandler 338  ]
 "255
 [; ;mcc_generated_files/uart/src/eusart.c: 255:     {
 {
@@ -1211,20 +1211,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "260
 [; ;mcc_generated_files/uart/src/eusart.c: 260: void EUSART_OverrunErrorCallbackRegister(void (* callbackHandler)(void))
-[v _EUSART_OverrunErrorCallbackRegister `(v ~T0 @X0 1 ef1`*F3317 ]
+[v _EUSART_OverrunErrorCallbackRegister `(v ~T0 @X0 1 ef1`*F3319 ]
 "261
 [; ;mcc_generated_files/uart/src/eusart.c: 261: {
 {
 [e :U _EUSART_OverrunErrorCallbackRegister ]
 "260
 [; ;mcc_generated_files/uart/src/eusart.c: 260: void EUSART_OverrunErrorCallbackRegister(void (* callbackHandler)(void))
-[v _callbackHandler `*F3319 ~T0 @X0 1 r1 ]
+[v _callbackHandler `*F3321 ~T0 @X0 1 r1 ]
 "261
 [; ;mcc_generated_files/uart/src/eusart.c: 261: {
 [f ]
 "262
 [; ;mcc_generated_files/uart/src/eusart.c: 262:     if(((void*)0) != callbackHandler)
-[e $ ! != -> -> -> 0 `i `*v `*F3320 _callbackHandler 340  ]
+[e $ ! != -> -> -> 0 `i `*v `*F3322 _callbackHandler 340  ]
 "263
 [; ;mcc_generated_files/uart/src/eusart.c: 263:     {
 {
@@ -1238,4 +1238,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 "266
 [; ;mcc_generated_files/uart/src/eusart.c: 266: }
 [e :UE 339 ]
+}
+"268
+[; ;mcc_generated_files/uart/src/eusart.c: 268: void EUSART_WriteString(const char* str) {
+[v _EUSART_WriteString `(v ~T0 @X0 1 ef1`*Cuc ]
+{
+[e :U _EUSART_WriteString ]
+[v _str `*Cuc ~T0 @X0 1 r1 ]
+[f ]
+"269
+[; ;mcc_generated_files/uart/src/eusart.c: 269:     while (*str != '\0') {
+[e $U 342  ]
+[e :U 343 ]
+{
+"270
+[; ;mcc_generated_files/uart/src/eusart.c: 270:         while (!PIR1bits.TXIF);
+[e $U 345  ]
+[e :U 346 ]
+[e :U 345 ]
+[e $ ! != -> . . _PIR1bits 0 4 `i -> 0 `i 346  ]
+[e :U 347 ]
+"271
+[; ;mcc_generated_files/uart/src/eusart.c: 271:         EUSART_Write(*str++);
+[e ( _EUSART_Write (1 -> *U ++ _str * -> -> 1 `i `x -> -> # *U _str `i `x `uc ]
+"272
+[; ;mcc_generated_files/uart/src/eusart.c: 272:     }
+}
+[e :U 342 ]
+"269
+[; ;mcc_generated_files/uart/src/eusart.c: 269:     while (*str != '\0') {
+[e $ != -> *U _str `ui -> 0 `ui 343  ]
+[e :U 344 ]
+"273
+[; ;mcc_generated_files/uart/src/eusart.c: 273: }
+[e :UE 341 ]
 }

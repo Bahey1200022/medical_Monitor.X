@@ -296,6 +296,9 @@ void EUSART_FramingErrorCallbackRegister(void (* callbackHandler)(void));
  */
 void EUSART_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
 
+void EUSART_WriteString(const char* str) ;
+
+
 #ifdef __cplusplus  // Provide C++ Compatibility
 
     }

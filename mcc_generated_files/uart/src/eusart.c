@@ -265,3 +265,9 @@ void EUSART_OverrunErrorCallbackRegister(void (* callbackHandler)(void))
     }    
 }
 
+void EUSART_WriteString(const char* str) {
+    while (*str != '\0') {
+        while (!PIR1bits.TXIF); // Wait until the transmit buffer is empty
+        EUSART_Write(*str++);
+    }
+}

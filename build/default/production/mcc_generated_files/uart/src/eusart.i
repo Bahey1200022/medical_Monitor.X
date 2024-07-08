@@ -5128,7 +5128,7 @@ void CLOCK_Initialize(void);
 # 42 "mcc_generated_files/uart/src/../../system/system.h" 2
 
 # 1 "mcc_generated_files/uart/src/../../system/../system/pins.h" 1
-# 118 "mcc_generated_files/uart/src/../../system/../system/pins.h"
+# 138 "mcc_generated_files/uart/src/../../system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -5425,6 +5425,8 @@ void EUSART_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 
 
 void EUSART_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
+
+void EUSART_WriteString(const char* str) ;
 # 37 "mcc_generated_files/uart/src/eusart.c" 2
 # 47 "mcc_generated_files/uart/src/eusart.c"
 const uart_drv_interface_t UART1 = {
@@ -5645,5 +5647,12 @@ void EUSART_OverrunErrorCallbackRegister(void (* callbackHandler)(void))
     if(((void*)0) != callbackHandler)
     {
         EUSART_OverrunErrorHandler = callbackHandler;
+    }
+}
+
+void EUSART_WriteString(const char* str) {
+    while (*str != '\0') {
+        while (!PIR1bits.TXIF);
+        EUSART_Write(*str++);
     }
 }

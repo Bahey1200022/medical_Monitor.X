@@ -1,23 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"56 ./mcc_generated_files/system/../uart/../system/system.h
-[; ;./mcc_generated_files/system/../uart/../system/system.h: 56: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"14 ./lcd.h
-[; ;./lcd.h: 14: void LCD_Init(void);
-[v _LCD_Init `(v ~T0 @X0 0 ef ]
-"17
-[; ;./lcd.h: 17: void LCD_WriteString(const char *str);
-[v _LCD_WriteString `(v ~T0 @X0 0 ef1`*Cuc ]
-[v F205 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
-[v __delay `JF205 ~T0 @X0 0 e ]
-[p i __delay ]
-"15 ./lcd.h
-[; ;./lcd.h: 15: void LCD_Command(uint8_t cmd );
-[v _LCD_Command `(v ~T0 @X0 0 ef1`uc ]
-"76 main.c
-[; ;main.c: 76:        adc_result_t adcValue = ADC_GetConversion(0);
+"53 main.c
+[; ;main.c: 53:          adc_result_t adcValue = ADC_GetConversion(0);
 [c E2743 15 .. ]
 [n E2743 . posChannel_FVR  ]
 "120 ./mcc_generated_files/system/../adc/adc.h
@@ -26,6 +9,71 @@ Version 4.0 HI-TECH Software Intermediate Code
 "121 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h
 [; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"299 ./mcc_generated_files/uart/eusart.h
+[v _EUSART_WriteString `(v ~T0 @X0 0 ef1`*Cuc ]
+[v F205 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v __delay `JF205 ~T0 @X0 0 e ]
+[p i __delay ]
+[t ~ __interrupt . k ]
+[t T40 __interrupt ]
+"20 ./Timer0.h
+[; ;./Timer0.h: 20: void Timer0_ISR(void);
+[v _Timer0_ISR `(v ~T0 @X0 0 ef ]
+[p mainexit ]
+"56 ./mcc_generated_files/system/../uart/../system/system.h
+[; ;./mcc_generated_files/system/../uart/../system/system.h: 56: void SYSTEM_Initialize(void);
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"2487 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 2487:     struct {
+[s S96 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S96 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"2497
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 2497:     struct {
+[s S97 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S97 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"2486
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 2486: typedef union {
+[u S95 `S96 1 `S97 1 ]
+[n S95 . . . ]
+"2508
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 2508: extern volatile TRISCbits_t TRISCbits __attribute__((address(0xF94)));
+[v _TRISCbits `VS95 ~T0 @X0 0 e@3988 ]
+"7049
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7049:     struct {
+[s S297 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S297 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"7059
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7059:     struct {
+[s S298 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S298 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"7069
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7069:     struct {
+[s S299 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S299 . . GIEL GIEH ]
+"7048
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7048: typedef union {
+[u S296 `S297 1 `S298 1 `S299 1 ]
+[n S296 . . . . ]
+"7075
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7075: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS296 ~T0 @X0 0 e@4082 ]
+"14 ./lcd.h
+[; ;./lcd.h: 14: void LCD_Init(void);
+[v _LCD_Init `(v ~T0 @X0 0 ef ]
+"17
+[; ;./lcd.h: 17: void LCD_WriteString(const char *str);
+[v _LCD_WriteString `(v ~T0 @X0 0 ef1`*Cuc ]
+"15
+[; ;./lcd.h: 15: void LCD_Command(uint8_t cmd );
+[v _LCD_Command `(v ~T0 @X0 0 ef1`uc ]
+"19 ./Timer0.h
+[; ;./Timer0.h: 19: void Timer0_Initialize(void);
+[v _Timer0_Initialize `(v ~T0 @X0 0 ef ]
+[v F3249 `(v ~T0 @X0 0 tf ]
+"21
+[; ;./Timer0.h: 21: void Timer0_SetCallback(void (*callback)(void));
+[v _Timer0_SetCallback `(v ~T0 @X0 0 ef1`*F3249 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
 [; <" SSPMSK equ 0F77h ;# ">
@@ -467,80 +515,168 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
 "45 main.c
-[; ;main.c: 45: int main(void)
+[; ;main.c: 45: volatile int overflow_count = 0;
+[v _overflow_count `Vi ~T0 @X0 1 e ]
+[i _overflow_count
+-> 0 `i
+]
+"48
+[; ;main.c: 48: void Timer0_UserCallback(void) {
+[v _Timer0_UserCallback `(v ~T0 @X0 1 ef ]
+{
+[e :U _Timer0_UserCallback ]
+[f ]
+"49
+[; ;main.c: 49:     overflow_count++;
+[e ++ _overflow_count -> -> 1 `i `Vi ]
+"50
+[; ;main.c: 50:     if (overflow_count >= 10) {
+[e $ ! >= _overflow_count -> 10 `i 310  ]
+{
+"51
+[; ;main.c: 51:         overflow_count = 0;
+[e = _overflow_count -> 0 `i ]
+"52
+[; ;main.c: 52:          char str[6];
+[v _str `uc ~T0 @X0 -> 6 `i a ]
+"53
+[; ;main.c: 53:          adc_result_t adcValue = ADC_GetConversion(0);
+[v _adcValue `us ~T0 @X0 1 a ]
+[e = _adcValue ( _ADC_GetConversion (1 -> -> 0 `i `E2743 ]
+"54
+[; ;main.c: 54:        uint16_t res =adcValue>>6;
+[v _res `us ~T0 @X0 1 a ]
+[e = _res -> >> -> _adcValue `ui -> 6 `i `us ]
+"55
+[; ;main.c: 55:        int temp = (int)((float)res / 1023.0 * 500);
+[v _temp `i ~T0 @X0 1 a ]
+[e = _temp -> * / -> -> _res `f `d .1023.0 -> -> 500 `i `d `i ]
+"56
+[; ;main.c: 56:         uint8_t temp_uint8 = (uint8_t)temp;
+[v _temp_uint8 `uc ~T0 @X0 1 a ]
+[e = _temp_uint8 -> _temp `uc ]
+"59
+[; ;main.c: 59:         sprintf(str, "Temp: %u\r\n", temp_uint8);
+[e ( _sprintf (1 , (. , &U _str :s 1C -> _temp_uint8 `i ]
+"65
+[; ;main.c: 65:         EUSART_WriteString(str);
+[e ( _EUSART_WriteString (1 -> &U _str `*Cuc ]
+"66
+[; ;main.c: 66:         _delay((unsigned long)((100)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"69
+[; ;main.c: 69:     }
+}
+[e :U 310 ]
+"70
+[; ;main.c: 70: }
+[e :UE 309 ]
+}
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"72
+[; ;main.c: 72: void __attribute__((picinterrupt(("")))) ISR(void) {
+[v _ISR `(v ~T40 @X0 1 ef ]
+{
+[e :U _ISR ]
+[f ]
+"74
+[; ;main.c: 74:     Timer0_ISR();
+[e ( _Timer0_ISR ..  ]
+"75
+[; ;main.c: 75: }
+[e :UE 311 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"77
+[; ;main.c: 77: int main(void)
 [v _main `(i ~T0 @X0 1 ef ]
-"46
-[; ;main.c: 46: {
+"78
+[; ;main.c: 78: {
 {
 [e :U _main ]
 [f ]
-"47
-[; ;main.c: 47:     SYSTEM_Initialize();
+"79
+[; ;main.c: 79:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"66
-[; ;main.c: 66:    LCD_Init();
+"81
+[; ;main.c: 81:     TRISCbits.TRISC2=0;
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+"93
+[; ;main.c: 93:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"99
+[; ;main.c: 99:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+"104
+[; ;main.c: 104:    LCD_Init();
 [e ( _LCD_Init ..  ]
-"68
-[; ;main.c: 68: LCD_WriteString("Monitor Start");
-[e ( _LCD_WriteString (1 :s 1C ]
-"69
-[; ;main.c: 69: _delay((unsigned long)((400)*(16000000/4000.0)));
+"106
+[; ;main.c: 106: LCD_WriteString("Monitor Start");
+[e ( _LCD_WriteString (1 :s 2C ]
+"107
+[; ;main.c: 107: _delay((unsigned long)((400)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 400 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"70
-[; ;main.c: 70:    LCD_Command(0x01);
+"108
+[; ;main.c: 108:    LCD_Command(0x01);
 [e ( _LCD_Command (1 -> -> 1 `i `uc ]
-"72
-[; ;main.c: 72:  char str[6];
+"110
+[; ;main.c: 110:  char str[6];
 [v _str `uc ~T0 @X0 -> 6 `i a ]
-"74
-[; ;main.c: 74:     while(1)
-[e :U 311 ]
-"75
-[; ;main.c: 75:     {
+"112
+[; ;main.c: 112:  Timer0_Initialize();
+[e ( _Timer0_Initialize ..  ]
+"113
+[; ;main.c: 113:  Timer0_SetCallback(Timer0_UserCallback);
+[e ( _Timer0_SetCallback (1 &U _Timer0_UserCallback ]
+"114
+[; ;main.c: 114:     while(1)
+[e :U 314 ]
+"115
+[; ;main.c: 115:     {
 {
-"76
-[; ;main.c: 76:        adc_result_t adcValue = ADC_GetConversion(0);
+"116
+[; ;main.c: 116:        adc_result_t adcValue = ADC_GetConversion(0);
 [v _adcValue `us ~T0 @X0 1 a ]
 [e = _adcValue ( _ADC_GetConversion (1 -> -> 0 `i `E2743 ]
-"77
-[; ;main.c: 77:        uint16_t res =adcValue>>6;
+"117
+[; ;main.c: 117:        uint16_t res =adcValue>>6;
 [v _res `us ~T0 @X0 1 a ]
 [e = _res -> >> -> _adcValue `ui -> 6 `i `us ]
-"78
-[; ;main.c: 78:        int temp = (int)((float)res / 1023.0 * 500);
+"118
+[; ;main.c: 118:        int temp = (int)((float)res / 1023.0 * 500);
 [v _temp `i ~T0 @X0 1 a ]
 [e = _temp -> * / -> -> _res `f `d .1023.0 -> -> 500 `i `d `i ]
-"82
-[; ;main.c: 82:         sprintf(str, "%u",temp);
-[e ( _sprintf (1 , (. , &U _str :s 2C _temp ]
-"85
-[; ;main.c: 85:         LCD_WriteString("T : ");
-[e ( _LCD_WriteString (1 :s 3C ]
-"86
-[; ;main.c: 86:         LCD_WriteString(str);
+"122
+[; ;main.c: 122:         sprintf(str, "%u",temp);
+[e ( _sprintf (1 , (. , &U _str :s 3C _temp ]
+"125
+[; ;main.c: 125:         LCD_WriteString("T : ");
+[e ( _LCD_WriteString (1 :s 4C ]
+"126
+[; ;main.c: 126:         LCD_WriteString(str);
 [e ( _LCD_WriteString (1 -> &U _str `*Cuc ]
-"88
-[; ;main.c: 88:     _delay((unsigned long)((1000)*(16000000/4000.0)));
+"128
+[; ;main.c: 128:     _delay((unsigned long)((1000)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"89
-[; ;main.c: 89:     LCD_Command(0x01);
+"129
+[; ;main.c: 129:     LCD_Command(0x01);
 [e ( _LCD_Command (1 -> -> 1 `i `uc ]
-"90
-[; ;main.c: 90:     _delay((unsigned long)((100)*(16000000/4000.0)));
+"130
+[; ;main.c: 130:     _delay((unsigned long)((100)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"93
-[; ;main.c: 93:     }
+"133
+[; ;main.c: 133:     }
 }
-[e :U 310 ]
-[e $U 311  ]
-[e :U 312 ]
-"94
-[; ;main.c: 94: }
-[e :UE 309 ]
+[e :U 313 ]
+[e $U 314  ]
+[e :U 315 ]
+"134
+[; ;main.c: 134: }
+[e :UE 312 ]
 }
 [p f _sprintf 8389632 ]
-[a 2C 37 117 0 ]
-[a 1C 77 111 110 105 116 111 114 32 83 116 97 114 116 0 ]
-[a 3C 84 32 58 32 0 ]
+[a 3C 37 117 0 ]
+[a 2C 77 111 110 105 116 111 114 32 83 116 97 114 116 0 ]
+[a 4C 84 32 58 32 0 ]
+[a 1C 84 101 109 112 58 32 37 117 13 10 0 ]

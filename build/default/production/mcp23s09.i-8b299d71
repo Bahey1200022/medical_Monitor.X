@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/system/src/clock.c"
+# 1 "mcp23s09.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/system/src/clock.c" 2
-# 37 "mcc_generated_files/system/src/clock.c"
+# 1 "mcp23s09.c" 2
+# 1 "./mcp23s09.h" 1
+# 11 "./mcp23s09.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4939,21 +4940,519 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 37 "mcc_generated_files/system/src/clock.c" 2
+# 11 "./mcp23s09.h" 2
 
-# 1 "mcc_generated_files/system/src/../clock.h" 1
-# 50 "mcc_generated_files/system/src/../clock.h"
+# 1 "./mcc_generated_files/uart/eusart.h" 1
+# 37 "./mcc_generated_files/uart/eusart.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
+# 37 "./mcc_generated_files/uart/eusart.h" 2
+
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 143 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 ssize_t;
+# 255 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 409 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+
+
+
+
+
+int ungetc(int, FILE *);
+int getch(void);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+
+
+
+
+void putch(char);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 45 "./mcc_generated_files/uart/eusart.h" 2
+
+# 1 "./mcc_generated_files/uart/../system/system.h" 1
+# 42 "./mcc_generated_files/uart/../system/system.h"
+# 1 "./mcc_generated_files/uart/../system/config_bits.h" 1
+# 39 "./mcc_generated_files/uart/../system/config_bits.h"
+# 1 "./mcc_generated_files/uart/../system/../system/clock.h" 1
+# 50 "./mcc_generated_files/uart/../system/../system/clock.h"
 void CLOCK_Initialize(void);
-# 38 "mcc_generated_files/system/src/clock.c" 2
+# 39 "./mcc_generated_files/uart/../system/config_bits.h" 2
+# 42 "./mcc_generated_files/uart/../system/system.h" 2
+
+# 1 "./mcc_generated_files/uart/../system/../system/pins.h" 1
+# 138 "./mcc_generated_files/uart/../system/../system/pins.h"
+void PIN_MANAGER_Initialize (void);
 
 
-void CLOCK_Initialize(void)
+
+
+
+
+
+void PIN_MANAGER_IOC(void);
+# 43 "./mcc_generated_files/uart/../system/system.h" 2
+
+# 1 "./mcc_generated_files/uart/../system/../adc/adc.h" 1
+# 45 "./mcc_generated_files/uart/../system/../adc/adc.h"
+typedef uint16_t adc_result_t;
+
+
+
+
+
+
+typedef struct
 {
-    OSCCON = (0 << 0x0)
-        | (0 << 0x3)
-        | (7 << 0x4)
-        | (0 << 0x7);
-    OSCTUNE = (0 << 0x0)
-        | (0 << 0x6)
-        | (0 << 0x7);
+    adc_result_t adcResult1;
+    adc_result_t adcResult2;
+} adc_sync_double_result_t;
+
+
+
+
+
+
+typedef enum
+{
+    posChannel_FVR = 0xf
+} adc_channel_t;
+# 77 "./mcc_generated_files/uart/../system/../adc/adc.h"
+void ADC_Initialize(void);
+# 86 "./mcc_generated_files/uart/../system/../adc/adc.h"
+void ADC_SelectChannel(adc_channel_t channel);
+
+
+
+
+
+
+
+void ADC_StartConversion(void);
+# 103 "./mcc_generated_files/uart/../system/../adc/adc.h"
+_Bool ADC_IsConversionDone(void);
+
+
+
+
+
+
+
+adc_result_t ADC_GetConversionResult(void);
+# 120 "./mcc_generated_files/uart/../system/../adc/adc.h"
+adc_result_t ADC_GetConversion(adc_channel_t channel);
+# 129 "./mcc_generated_files/uart/../system/../adc/adc.h"
+void ADC_TemperatureAcquisitionDelay(void);
+# 44 "./mcc_generated_files/uart/../system/system.h" 2
+
+# 1 "./mcc_generated_files/uart/../system/../uart/eusart.h" 1
+# 45 "./mcc_generated_files/uart/../system/system.h" 2
+
+# 1 "./mcc_generated_files/uart/../system/../system/interrupt.h" 1
+# 85 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+void INTERRUPT_Initialize (void);
+# 219 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+void INT0_ISR(void);
+# 228 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+void INT0_CallBack(void);
+# 237 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+void INT0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 246 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+extern void (*INT0_InterruptHandler)(void);
+# 255 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+void INT0_DefaultInterruptHandler(void);
+# 264 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+void INT1_ISR(void);
+# 273 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+void INT1_CallBack(void);
+# 282 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+void INT1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 291 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+extern void (*INT1_InterruptHandler)(void);
+# 300 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+void INT1_DefaultInterruptHandler(void);
+# 309 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+void INT2_ISR(void);
+# 318 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+void INT2_CallBack(void);
+# 327 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 336 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+extern void (*INT2_InterruptHandler)(void);
+# 345 "./mcc_generated_files/uart/../system/../system/interrupt.h"
+void INT2_DefaultInterruptHandler(void);
+# 46 "./mcc_generated_files/uart/../system/system.h" 2
+# 56 "./mcc_generated_files/uart/../system/system.h"
+void SYSTEM_Initialize(void);
+# 46 "./mcc_generated_files/uart/../system/../uart/eusart.h" 2
+
+# 1 "./mcc_generated_files/uart/uart_drv_interface.h" 1
+# 41 "./mcc_generated_files/uart/uart_drv_interface.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 1 3
+# 19 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 138 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef int ptrdiff_t;
+# 20 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stddef.h" 2 3
+# 41 "./mcc_generated_files/uart/uart_drv_interface.h" 2
+
+# 1 "./mcc_generated_files/uart/uart_types.h" 1
+# 57 "./mcc_generated_files/uart/uart_types.h"
+enum UART_STANDARD_BAUDS{
+UART_110 = 0,
+UART_300 = 1,
+UART_600 = 2,
+UART_1200 = 3,
+UART_2400 = 4,
+UART_4800 = 5,
+UART_9600 = 6,
+UART_14400 = 7,
+UART_19200 = 8,
+UART_38400 = 9,
+UART_57600 = 10,
+UART_115200 = 11,
+UART_230400 = 12,
+UART_460800 = 13,
+UART_921600 = 14,
+};
+# 42 "./mcc_generated_files/uart/uart_drv_interface.h" 2
+# 58 "./mcc_generated_files/uart/uart_drv_interface.h"
+typedef struct {
+void (*Initialize)(void);
+void (*Deinitialize)(void);
+uint8_t (*Read)(void);
+void (*Write)(uint8_t);
+_Bool (*IsRxReady)(void);
+_Bool (*IsTxReady)(void);
+_Bool (*IsTxDone)(void);
+void (*TransmitEnable)(void);
+void (*TransmitDisable)(void);
+void (*AutoBaudSet)(_Bool enable);
+_Bool (*AutoBaudQuery)(void);
+_Bool (*AutoBaudEventEnableGet)(void);
+void (*BRGCountSet)(uint32_t brgValue);
+uint32_t (*BRGCountGet)(void);
+void (*BaudRateSet)(uint32_t baudRate);
+uint32_t (*BaudRateGet)(void);
+size_t (*ErrorGet)(void);
+void (*TxCompleteCallbackRegister)(void (*CallbackHandler) (void));
+void (*RxCompleteCallbackRegister)(void (*CallbackHandler) (void));
+void (*TxCollisionCallbackRegister)(void (*CallbackHandler) (void));
+void (*FramingErrorCallbackRegister)(void (*CallbackHandler) (void));
+void (*OverrunErrorCallbackRegister)(void (*CallbackHandler) (void));
+void (*ParityErrorCallbackRegister)(void (*CallbackHandler) (void));
+void (*EventCallbackRegister)(void (*CallbackHandler) (void));
+}uart_drv_interface_t;
+# 47 "./mcc_generated_files/uart/../system/../uart/eusart.h" 2
+# 92 "./mcc_generated_files/uart/../system/../uart/eusart.h"
+typedef union {
+    struct {
+        uint8_t perr : 1;
+        uint8_t ferr : 1;
+        uint8_t oerr : 1;
+        uint8_t reserved : 5;
+    };
+    size_t status;
+}eusart_status_t;
+# 110 "./mcc_generated_files/uart/../system/../uart/eusart.h"
+extern const uart_drv_interface_t UART1;
+# 119 "./mcc_generated_files/uart/../system/../uart/eusart.h"
+void EUSART_Initialize(void);
+
+
+
+
+
+
+
+void EUSART_Deinitialize(void);
+
+
+
+
+
+
+
+void EUSART_Enable(void);
+
+
+
+
+
+
+
+void EUSART_Disable(void);
+# 152 "./mcc_generated_files/uart/../system/../uart/eusart.h"
+void EUSART_TransmitEnable(void);
+
+
+
+
+
+
+
+void EUSART_TransmitDisable(void);
+# 169 "./mcc_generated_files/uart/../system/../uart/eusart.h"
+void EUSART_ReceiveEnable(void);
+
+
+
+
+
+
+
+void EUSART_ReceiveDisable(void);
+# 186 "./mcc_generated_files/uart/../system/../uart/eusart.h"
+void EUSART_SendBreakControlEnable(void);
+
+
+
+
+
+
+
+void EUSART_SendBreakControlDisable(void);
+
+
+
+
+
+
+
+void EUSART_AutoBaudSet(_Bool enable);
+
+
+
+
+
+
+
+_Bool EUSART_AutoBaudQuery(void);
+
+
+
+
+
+
+
+_Bool EUSART_IsAutoBaudDetectOverflow(void);
+
+
+
+
+
+
+
+void EUSART_AutoBaudDetectOverflowReset(void);
+# 235 "./mcc_generated_files/uart/../system/../uart/eusart.h"
+_Bool EUSART_IsRxReady(void);
+# 244 "./mcc_generated_files/uart/../system/../uart/eusart.h"
+_Bool EUSART_IsTxReady(void);
+# 253 "./mcc_generated_files/uart/../system/../uart/eusart.h"
+_Bool EUSART_IsTxDone(void);
+
+
+
+
+
+
+
+size_t EUSART_ErrorGet(void);
+# 271 "./mcc_generated_files/uart/../system/../uart/eusart.h"
+uint8_t EUSART_Read(void);
+# 281 "./mcc_generated_files/uart/../system/../uart/eusart.h"
+void EUSART_Write(uint8_t txData);
+
+
+
+
+
+
+
+void EUSART_FramingErrorCallbackRegister(void (* callbackHandler)(void));
+
+
+
+
+
+
+
+void EUSART_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
+# 12 "./mcp23s09.h" 2
+
+
+
+void MCP23S09_Init(void);
+void MCP23S09_Write(uint8_t reg, uint8_t data);
+# 1 "mcp23s09.c" 2
+
+# 1 "./spi.h" 1
+# 13 "./spi.h"
+void SPI_Init(void);
+void SPI_Write(uint8_t data);
+# 2 "mcp23s09.c" 2
+# 12 "mcp23s09.c"
+void MCP23S09_Init(void) {
+
+    TRISDbits.TRISD0 = 0;
+    SPI_Init();
+
+
+    MCP23S09_Write(0x0A, 0xFF);
+
+    MCP23S09_Write(0x00, 0x00);
+    MCP23S09_Write(0x06,0xFF);
+
 }
+
+void MCP23S09_Write(uint8_t reg, uint8_t data) {
+    LATDbits.LATD0 = 0;
+    SPI_Write(0b01000000);
+    SPI_Write(reg);
+
+   SPI_Write(data);
+
+
+
+   LATDbits.LATD0 = 1;
+
+
+           }

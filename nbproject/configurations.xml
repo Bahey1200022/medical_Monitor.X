@@ -26,6 +26,7 @@
       <itemPath>spi.h</itemPath>
       <itemPath>mcp23s09.h</itemPath>
       <itemPath>lcd.h</itemPath>
+      <itemPath>Timer0.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -67,6 +68,7 @@
       <itemPath>spi.c</itemPath>
       <itemPath>mcp23s09.c</itemPath>
       <itemPath>lcd.c</itemPath>
+      <itemPath>Timer0.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>

@@ -4956,7 +4956,7 @@ void CLOCK_Initialize(void);
 # 42 "./mcc_generated_files/system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 118 "./mcc_generated_files/system/../system/pins.h"
+# 138 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -5371,6 +5371,8 @@ void EUSART_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 
 
 void EUSART_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
+
+void EUSART_WriteString(const char* str) ;
 # 45 "./mcc_generated_files/system/../uart/../system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../system/interrupt.h" 1
@@ -5430,11 +5432,70 @@ void LCD_WriteString(const char *str);
 void MCP23S09_Init(void);
 void MCP23S09_Write(uint8_t reg, uint8_t data);
 # 36 "main.c" 2
-# 45 "main.c"
+
+# 1 "./Timer0.h" 1
+# 19 "./Timer0.h"
+void Timer0_Initialize(void);
+void Timer0_ISR(void);
+void Timer0_SetCallback(void (*callback)(void));
+# 37 "main.c" 2
+
+
+
+
+
+
+
+
+volatile int overflow_count = 0;
+
+
+void Timer0_UserCallback(void) {
+    overflow_count++;
+    if (overflow_count >= 10) {
+        overflow_count = 0;
+         char str[6];
+         adc_result_t adcValue = ADC_GetConversion(0);
+       uint16_t res =adcValue>>6;
+       int temp = (int)((float)res / 1023.0 * 500);
+        uint8_t temp_uint8 = (uint8_t)temp;
+
+
+        sprintf(str, "Temp: %u\r\n", temp_uint8);
+
+
+
+
+
+        EUSART_WriteString(str);
+        _delay((unsigned long)((100)*(16000000/4000.0)));
+
+
+    }
+}
+
+void __attribute__((picinterrupt(("")))) ISR(void) {
+
+    Timer0_ISR();
+}
+
 int main(void)
 {
     SYSTEM_Initialize();
-# 66 "main.c"
+
+    TRISCbits.TRISC2=0;
+# 93 "main.c"
+    (INTCONbits.GIE = 1);
+
+
+
+
+
+    (INTCONbits.PEIE = 1);
+
+
+
+
    LCD_Init();
 
 LCD_WriteString("Monitor Start");
@@ -5443,6 +5504,8 @@ _delay((unsigned long)((400)*(16000000/4000.0)));
 
  char str[6];
 
+ Timer0_Initialize();
+ Timer0_SetCallback(Timer0_UserCallback);
     while(1)
     {
        adc_result_t adcValue = ADC_GetConversion(0);

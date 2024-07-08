@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/system/src/pins.c"
+# 1 "Timer0.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/system/src/pins.c" 2
-# 35 "mcc_generated_files/system/src/pins.c"
-# 1 "mcc_generated_files/system/src/../pins.h" 1
-# 38 "mcc_generated_files/system/src/../pins.h"
+# 1 "Timer0.c" 2
+# 1 "./Timer0.h" 1
+# 11 "./Timer0.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4941,9 +4940,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 38 "mcc_generated_files/system/src/../pins.h" 2
-# 78 "mcc_generated_files/system/src/../pins.h"
-void PIN_MANAGER_Initialize (void);
+# 11 "./Timer0.h" 2
 
 
 
@@ -4951,51 +4948,42 @@ void PIN_MANAGER_Initialize (void);
 
 
 
-void PIN_MANAGER_IOC(void);
-# 35 "mcc_generated_files/system/src/pins.c" 2
+
+void Timer0_Initialize(void);
+void Timer0_ISR(void);
+void Timer0_SetCallback(void (*callback)(void));
+# 1 "Timer0.c" 2
 
 
+static void (*Timer0_Callback)(void) = 0;
 
-void PIN_MANAGER_Initialize(void)
-{
-
-
-
-    LATA = 0x0;
-    LATB = 0x0;
-    LATC = 0x0;
-    LATD = 0x0;
-    LATE = 0x0;
+void Timer0_Initialize(void) {
 
 
+    T0CONbits.TMR0ON = 0;
+    T0CONbits.PSA = 0;
+    T0CONbits.T0CS = 0;
 
-
-
-
-
-    TRISA = 0xFF;
-    TRISB = 0xFF;
-    TRISC = 0xFF;
-    TRISD = 0xFF;
-    TRISE = 0x7;
-
-
-
-
-    ANSELH = 0x1F;
-
-
-
-
-    WPUB = 0xFF;
-# 90 "mcc_generated_files/system/src/pins.c"
-    IOCB = 0x0;
-
-
-
-    INTCONbits.RBIE = 1;
+    T0CONbits.T0PS = 0b111;
+    T0CONbits.T08BIT = 0;
+    TMR0H = (0xC3);
+    TMR0L = (0x27);
+    INTCONbits.TMR0IF = 0;
+    INTCONbits.TMR0IE = 1;
+    T0CONbits.TMR0ON = 1;
 }
 
-void PIN_MANAGER_IOC(void)
-{
+void Timer0_ISR(void) {
+    if (INTCONbits.TMR0IF) {
+        INTCONbits.TMR0IF = 0;
+        TMR0H = (0xC3);
+        TMR0L = (0x27);
+        if (Timer0_Callback) {
+            Timer0_Callback();
+        }
+    }
+}
+
+void Timer0_SetCallback(void (*callback)(void)) {
+    Timer0_Callback = callback;
 }

@@ -4991,7 +4991,7 @@ void CLOCK_Initialize(void);
 # 42 "mcc_generated_files/system/src/../../system/system.h" 2
 
 # 1 "mcc_generated_files/system/src/../../system/../system/pins.h" 1
-# 118 "mcc_generated_files/system/src/../../system/../system/pins.h"
+# 138 "mcc_generated_files/system/src/../../system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -5406,6 +5406,8 @@ void EUSART_FramingErrorCallbackRegister(void (* callbackHandler)(void));
 
 
 void EUSART_OverrunErrorCallbackRegister(void (* callbackHandler)(void));
+
+void EUSART_WriteString(const char* str) ;
 # 45 "mcc_generated_files/system/src/../../system/../uart/../system/system.h" 2
 # 56 "mcc_generated_files/system/src/../../system/../uart/../system/system.h"
 void SYSTEM_Initialize(void);

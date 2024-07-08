@@ -69,6 +69,26 @@
 #define IO_RA0_SetAnalogMode()      do { ANSELAbits.ANS0 = 1; } while(0)
 #define IO_RA0_SetDigitalMode()     do { ANSELAbits.ANS0 = 0; } while(0)
 
+// get/set RA4 aliases
+#define IO_RA4_TRIS                 TRISAbits.TRISA4
+#define IO_RA4_LAT                  LATAbits.LATA4
+#define IO_RA4_PORT                 PORTAbits.RA4
+#define IO_RA4_WPU                  WPUAbits.
+#define IO_RA4_OD                   ODCONAbits.
+#define IO_RA4_ANS                  ANSELAbits.
+#define IO_RA4_SetHigh()            do { LATAbits.LATA4 = 1; } while(0)
+#define IO_RA4_SetLow()             do { LATAbits.LATA4 = 0; } while(0)
+#define IO_RA4_Toggle()             do { LATAbits.LATA4 = ~LATAbits.LATA4; } while(0)
+#define IO_RA4_GetValue()           PORTAbits.RA4
+#define IO_RA4_SetDigitalInput()    do { TRISAbits.TRISA4 = 1; } while(0)
+#define IO_RA4_SetDigitalOutput()   do { TRISAbits.TRISA4 = 0; } while(0)
+#define IO_RA4_SetPullup()          do { WPUAbits. = 1; } while(0)
+#define IO_RA4_ResetPullup()        do { WPUAbits. = 0; } while(0)
+#define IO_RA4_SetPushPull()        do { ODCONAbits. = 0; } while(0)
+#define IO_RA4_SetOpenDrain()       do { ODCONAbits. = 1; } while(0)
+#define IO_RA4_SetAnalogMode()      do { ANSELAbits. = 1; } while(0)
+#define IO_RA4_SetDigitalMode()     do { ANSELAbits. = 0; } while(0)
+
 // get/set RC6 aliases
 #define IO_RC6_TRIS                 TRISCbits.TRISC6
 #define IO_RC6_LAT                  LATCbits.LATC6
