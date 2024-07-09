@@ -19,7 +19,7 @@ int Calculate_bpm(void){
             lastTime = currentTime;
 
             if (timeDifference > 0) {
-                bpm = (unsigned int)(60.0 / (timeDifference * (1.0 / (_XTAL_FREQ / 32.0))));  // Calculate BPM
+                bpm = (unsigned int)(60.0 / (timeDifference * (1.0 / (_XTAL_FREQ / 32.0))))/8;  // Calculate BPM
             }
 
             __delay_ms(300);  // Debounce delay

@@ -513,11 +513,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Timer0.c: 13:     T0CONbits.T08BIT = 0;
 [e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
 "14
-[; ;Timer0.c: 14:     TMR0H = (0xC3);
-[e = _TMR0H -> -> 195 `i `uc ]
+[; ;Timer0.c: 14:     TMR0H = (0xE1);
+[e = _TMR0H -> -> 225 `i `uc ]
 "15
-[; ;Timer0.c: 15:     TMR0L = (0x27);
-[e = _TMR0L -> -> 39 `i `uc ]
+[; ;Timer0.c: 15:     TMR0L = (0x6B);
+[e = _TMR0L -> -> 107 `i `uc ]
 "16
 [; ;Timer0.c: 16:     INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
@@ -545,11 +545,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Timer0.c: 23:         INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "24
-[; ;Timer0.c: 24:         TMR0H = (0xC3);
-[e = _TMR0H -> -> 195 `i `uc ]
+[; ;Timer0.c: 24:         TMR0H = (0xE1);
+[e = _TMR0H -> -> 225 `i `uc ]
 "25
-[; ;Timer0.c: 25:         TMR0L = (0x27);
-[e = _TMR0L -> -> 39 `i `uc ]
+[; ;Timer0.c: 25:         TMR0L = (0x6B);
+[e = _TMR0L -> -> 107 `i `uc ]
 "26
 [; ;Timer0.c: 26:         if (Timer0_Callback) {
 [e $ ! != _Timer0_Callback -> -> 0 `i `*F2746 306  ]

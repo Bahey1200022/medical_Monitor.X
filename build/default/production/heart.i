@@ -5034,7 +5034,7 @@ int Calculate_bpm(void){
             lastTime = currentTime;
 
             if (timeDifference > 0) {
-                bpm = (unsigned int)(60.0 / (timeDifference * (1.0 / (16000000 / 32.0))));
+                bpm = (unsigned int)(60.0 / (timeDifference * (1.0 / (16000000 / 32.0))))/8;
             }
 
             _delay((unsigned long)((300)*(16000000/4000.0)));

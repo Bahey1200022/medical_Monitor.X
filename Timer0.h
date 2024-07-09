@@ -11,8 +11,8 @@
 #include <xc.h>
 
 // Preload values for Timer0
-#define TIMER0_PRELOAD_HIGH (0xC3) // Example value, adjust as needed
-#define TIMER0_PRELOAD_LOW (0x27) // Example value, adjust as needed
+#define TIMER0_PRELOAD_HIGH (0xE1) // Example value, adjust as needed
+#define TIMER0_PRELOAD_LOW (0x6B) // Example value, adjust as needed
 #define _XTAL_FREQ 16000000 
 
 // Function prototypes

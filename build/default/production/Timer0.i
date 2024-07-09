@@ -4966,8 +4966,8 @@ void Timer0_Initialize(void) {
 
     T0CONbits.T0PS = 0b111;
     T0CONbits.T08BIT = 0;
-    TMR0H = (0xC3);
-    TMR0L = (0x27);
+    TMR0H = (0xE1);
+    TMR0L = (0x6B);
     INTCONbits.TMR0IF = 0;
     INTCONbits.TMR0IE = 1;
     T0CONbits.TMR0ON = 1;
@@ -4976,8 +4976,8 @@ void Timer0_Initialize(void) {
 void Timer0_ISR(void) {
     if (INTCONbits.TMR0IF) {
         INTCONbits.TMR0IF = 0;
-        TMR0H = (0xC3);
-        TMR0L = (0x27);
+        TMR0H = (0xE1);
+        TMR0L = (0x6B);
         if (Timer0_Callback) {
             Timer0_Callback();
         }
